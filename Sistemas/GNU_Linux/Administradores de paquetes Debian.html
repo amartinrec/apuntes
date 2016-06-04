@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Administradores de paquetes Debian</title>
+</head>
+<body>
+
+<h1>Herramientas de administración de paquetes</h1>
+
+	<h2>apt - Advanced Packaging Tool</h2>
+
+		<h3>apt-get</h3>
+
+		<h3>apt-cache</h3>
+			<h4>Descripción</h4>
+				<ul>
+					<li>Ofrece información sobre la base de datos de paquetes Debian, tambien llamada caché de paquetes.</li>
+					<li>Realiza una serie de operaciones sobre la caché (registro o lista) de paquetes de APT.</li>
+					<li>apt-cache no modifica el estado del sistema pero proporciona operaciones de búsqueda y genera información interesante a partir de los metadatos del paquete.</li>
+					<li>Información resumida del comando en <b><i>apt-cache -h</i></b> y detallada en <b><i>man apt-cache</i></b></li>
+				</ul>
+			<h4>Comandos:</h4>	
+				<ul>
+				  <li>apt-cache gencaches
+					<ul>
+						<li></li>
+					</ul>
+				  </li>
+				  <li>apt-cache showpkg <i>paquete</i> 
+					<ul>
+						<li>Muestra la información del paquete</li>
+					</ul>
+				  </li>
+				  <li>apt-cache showsrc <i>paquete</i> 
+					<ul>
+						<li></li>
+					</ul>
+				  </li>
+				  <li>apt-cache stats
+					<ul>
+						<li></li>
+					</ul>
+				  </li>
+				  <li>apt-cache dump
+					<ul>
+						<li></li>
+					</ul>
+				  </li>
+				  <li>apt-cache dumpavai
+					<ul>
+						<li></li>
+					</ul>
+				  </li>
+				  <li>apt-cache unmet
+					<ul>
+						<li>Localiza <b>dependencias no satisfechas</b>. Esto nos permite rastrear el origen de los problemas</li>
+					</ul>
+				  </li>
+				  <li>apt-cache search
+					<ul>
+						<li>Permite buscar dentro del listado de paquetes disponibles en nuestros repositorios. Hace la busqueda en en nombre del paquete, en su descripción y en toda la información disponible del paquete</li>
+					</ul>
+				  </li>
+				  <li>apt-cache show <i>paquete</i>
+					<ul>
+						<li></li>
+					</ul>
+				  </li>
+				  <li>apt-cache depends <i>paquete</i> 
+					<ul>
+						<li>Muestra todas las <b>dependencias</b> del paquete especificado</li>
+						<li>
+							El resultado agrupa los paquetes dependientes en las siguientes categorias:
+							<ul>
+								<li>Recomienda (Recommends)
+									<ul>
+										<li>Denota paquetes que normalmente se encuentran con el paquete destino la mayoria de las veces a no ser que se trate de instalaciones inusuales. Estos paquetes son instalados por apt por defecto con tu destino.</li>
+									</ul>
+								</li>
+								<li>Sugiere (Suggest)
+									<ul>
+										<li>Denota paquetes que pueden ser útiles con tu paquete destino pero no necesariamente requeridos. Por ejemplo "Python doc" no se requiere para el funcionamiento de Python en tu equipo, pero puede ser util para tí.</li>
+									</ul>
+								</li>	
+								<li>Rompe (Breaks)
+									<ul>
+										<li>Denota paquetes que ya están instalados en tu sistema pero rompen el proceso de tu instalación ya que dpkg rechazará desempaquetar e instalar los paquetes destino a no ser que los paquetes rotos sean reconfigurados primero. Esto normalmente en caso de una cierta versión. La solución automática seria hacer un upgrade (deconfigure) de todos los paquetes rotos.</li>
+									</ul>
+								</li>	
+								<li>Entra en conflicto (Conflicts)
+									<ul>
+										<li>Denota paquetes que ya están instalados en el equipo y declaran una incompatibilidad absoluta, estos paquetes <b>deben ser desinstalados</b> antes de instalar el paquete destino.</li>
+									</ul>
+								</li>	
+								<li>Reemplaza (Replace)
+									<ul>
+										<li>Denota paquetes que ya están instalados en el equipo y que alguno de sus ficheros será reemplazado por el paquete destino a instalar.</li>
+									</ul>
+								</li>
+								<li>Depends: update-inetd | Depends: openbsd-inetd
+									<ul>
+										<li>Este ejemplo indica que update-inetd y openbsd-inetd son opciones que se pueden instalar tanto una como la otra, si bien se prefiere la primera</li>
+									</ul>
+								</li>																																
+							</ul> 
+						</li>
+						<li>Observaciones:
+							<ul>
+								<li>Podemos obtener una visión de las dependencias entre los paquetes tambien desde <a href="http://packages.ubuntu.com">Ubuntu Packages Search</a></li> donde nos marca de color rojo las dependencias, verde las recomendaciones, azul las sugerencias.
+							</ul>
+						</li>	
+					</ul>
+				  </li>
+				  <li>apt-cache rdepends <i>paquete</i>
+					<ul>
+						<li>Muestra todas las <b>dependencias inversas</b>, es decir, los paquetes que dependen del especificado.</li>
+					</ul>
+				  </li>
+				  <li>apt-cache pkgnames
+					<ul>
+						<li>Muestra el listado de los paquetes susceptibles de ser instalados, no muestra los paquetes instalados.</li>
+						<li>Ver <i>dpkg-query</i> para obtener el listado de los paquetes instalados.</li>
+					</ul>
+				  </li>
+				  <li>apt-cache dotty <i>paquete</i> [{=pkg_version_number | /target_release}]... 
+					<ul>
+						<li></li>
+					</ul>
+				  </li>
+				  <li>apt-cache xvcg <i>paquete</i> [{=pkg_version_number | /target_release}]... 
+					<ul>
+						<li></li>
+					</ul>
+				  </li>
+				  <li>apt-cache policy [pkg...] 
+					<ul>
+						<li></li>
+					</ul>
+				  </li>
+				  <li>apt-cache madison <i>paquete</i> 
+					<ul>
+						<li></li>
+					</ul>
+				  </li>
+				  <li>apt-cache {-v | --version}
+					<ul>
+						<li>Información de la versión del comando apt-cache.</li>
+					</ul>
+				  </li>
+				  <li>apt-cache {-h | --help}
+					<ul>
+						<li>Información de la sintaxis y opciones del comando de forma resumida, muy interesante para echar un vistazo rapido a todas sus opciones.</li>
+					</ul>
+				  </li>
+				</ul>
+
+	<h2>dpkg - Gestor de paquetes Debian</h2>	
+
+		<h3>dpkg</h3>
+
+			<h4>Descripción</h4>
+				<ul>
+					<li></li>
+				</ul>
+			<h4>Comandos:</h4>
+				<ul>
+					<li>dpkg --list ó dpkg -l
+						<ul>
+							<li>Listado de los paquetes instalados en el sistema.</li>
+						</ul>
+					</li>		
+					<li>dpkg --listfiles <i>paquete</i>
+						<ul>
+							<li>Información sobre un paquete instalado incluyendo sus ficheros.</li>
+						</ul>
+					</li>	
+					<li>dpkg --search <i>fichero</i>
+						<ul>
+							<li>Paquetes que pertenecen a <i>fichero</i>.</li>
+						</ul>
+					</li>							
+				</ul>
+
+		<h3>dpkg-query</h3>
+
+			<h4>Descripción</h4>
+				<ul>
+					<li></li>
+				</ul>
+			<h4>Comandos:</h4>
+				<ul>
+					<li>dpkg-query -l
+						<ul>
+							<li>Muestra la <b>lista de paquetes instalados</b></li>
+							<li>La segunda columna del resultado obtenido de este comando es el <b>estado del paquete</b> que puede ser:
+								<ul>
+									<li>n = Not-installed</li>
+									<li>c = Config - files</li>
+									<li>H = Halt - installed</li>
+									<li>U = Unpacked</li>
+									<li>F = Half configured</li>
+									<li>W = triggers - awaiting</li>
+									<li>t = . - pending</li>
+									<li>i = Installed</li>
+								</ul>
+							</li>
+							<li>Emplearemos por tanto <b><i>dpkg-query -l | grep "^.i"</i></b> para seleccionar los paquetes instalados.</li>							
+							<li>Tambien mostrará aquellos paquetes que aun conservan sus ficheros de configuración. Aquellos que no han sido purgados mediante <i>apt-get purge paquete</i></li>
+							<li>El comando <i>dpkg -l</i> es equivalente a <i>dpkg-query -l</i>
+							<li>Hay que notar que el comando <i>apt-cache pkgnames</i> no lista los paquetes instalados sin que lo que hace es listar los paquetes disponibles para ser instalados independientemente de que estos estén instalados o no.</li>
+
+						</ul>
+					</li>
+				</ul>	
+
+		<h3>dpkg-reconfigure</h3>
+
+			<h4>Descripción</h4>
+				<ul>
+					<li></li>
+				</ul>
+			<h4>Comandos:</h4>
+				<ul>			
+					<li>dpkg-reconfigure tzdata
+						<ul>
+							<li>Configuracion de la zona horaria</li>
+						</ul>
+					</li>
+				</ul>
+
+	<h2>dselect</h2>
+	<h2>aptitude</h2>
+	<h2>Synaptic</h2>
+
+<h1>Actualización del sistema e Instalación por paquetes</h1>
+
+	<h2>Actualización de Ubuntu 14.04 - Modo gráfico</h2>
+	<ol>
+		<li>Configuración del sistema</li>
+		<li>Detalles</li>
+		<li>Botón "Instalar actualizaciones"</li>
+		<li>Botón "Instalar ahora"</li>
+	</ol>
+
+	<h2>Actualización de Ubuntu 14.04 - Modo Comandos</h2>
+	<ol>
+		<li>sudo apt-get update</li>
+		<li>sudo apt-get upgrade</li>
+	</ol>	
+	
+	<br /><br />
+	<a href="../../index.html">Ir al inicio</a>
+
+<!--
+ Instalaciones con APT (Advanced Packaging Tool)
+apt-get 
+Descripción: 
+
+Opciones :
+
+apt-get install <paquete>
+Instalar un paquete
+
+apt-get remove <paquete>
+Desinstalar paquete
+
+apt-get purge <paquete>
+Elimina un paquete incluidos sus ficheros de configuración
+
+apt-get autoremove
+Elimina de forma automática aquellos paquetes que no se están usando.
+
+apt-get update <paquete>
+Actualiza un paquete a la última versión disponible en el repositorio.
+
+apt-get upgrade
+Actualiza el sistema
+Actualizará todos los paquetes que dispongan de la rama instalada de la distribución.
+
+apt-get dist-upgrade
+Actualiza la distribución completa. Actualiza nuestro sistema a la siguiente versión disponible de la distribución.
+
+apt-get source <paquete>
+Descarga unicamente las fuentes de un paquete para manipularlas de forma manual.
+
+apt-get clean
+apt-get autoclean
+Limpiar caches, paquetes descargados, etc
+
+apt-get check
+Verificar que no tenemos ninguna dependencia incumplida.
+apt-cache 
+Descripción: permite (lanzar consultas, buscar paquetes)
+
+Opciones:
+
+apt-cache search <paquete>
+Busca un paquete en los repositorios, se puede especificar un patrón, expresión regular, nombre exacto del paquete, etc ,...
+
+apt-cache showpkg <paquete>
+Mostrar información sobre un paquete.
+
+apt-cache show <paquete>
+Mostrar información ampliada del paquete.
+
+apt-cache depends <paquete>
+Mostrar dependencias del paquete.
+
+apt-cache pkgnames
+Nombre de todos los paquetes instalados en el sistema.
+
+add-apt-repository
+
+Descripción: Permite (añadir repositorios)
+
+Ejemplo : sudo add-apt-repository "deb http://repository.spotify.com stable non-free"
+
+
+
+-->	
+
+</body>	
+</html>

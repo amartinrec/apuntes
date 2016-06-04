@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Comandos Linux / Ubuntu</title>
+</head>
+<body>
+	<header>
+		<h1>Comandos Linux</h1>
+	</header>
+	<article class="comando">
+		<h2>avconv</h2>
+		<h3>Descripción</h3>
+			<p>Obtiene información sobre archivos multimedia o transformalos a otros formatos compatibles.</p>
+		<h3>Sintaxis</h3>
+			<code>$ avconv</code>
+		<h3>Ejemplos</h3>
+			<ul>
+				<li>
+					<p><code>$avconv -i <span class="variable">&lt;fichero multimedia&gt;</span></code></p>
+					<p>Obtiene información de un archivo multimedia.</p>
+				</li>
+				<li>
+					<p><code>$avconv -i prueba.mpeg -vn -ar 44100 -ac 2 -ab 192 -f mp3 audio.mp3</code></p>
+					<p>Extrae el sonido de un fichero mp4</p>
+				</li>
+				<li>
+					<p><code>$avconv -i video.avi video_transformado.mpeg</code></p>
+					<p>Convierte de un formato de video avi a mpeg</p>
+				</li>
+				<li>
+					<p><code>$avconv -i video.mpeg video_transformado.avi</code></p>
+					<p>Convierte de un formato de video mpeg a avi</p>
+				</li>
+			</ul>	
+		</p>
+		<h3>Instalación</h3>
+			<p><code>$sudo apt-get install avconv</code></p>
+	</article>
+	<article class="comando">
+		<h2>cp</h2>
+		<h3>Descripción</h3>
+			<p>Copia ficheros o directorios</p>
+		<h3>Sintaxis</h3>
+			<code><div>$cp [opciones] <span class="variable">origen</span> <span class="variable">destino</span></code>
+		<h3>Opciones</h3>
+			<ul>
+				<li>-r, -R
+					<ul>
+						<li>Copia recursivamente los directorios</li>
+					</ul>
+				</li>
+				<li>-p
+					<ul>
+						<li>Preserva los atributos de <span class="variable">origen</span> en <span class="variable">destino</span>. Esto se refiere a la fecha de modificación, fecha de acceso, ID de usuario y grupo, permisos, etc. </li>
+					</ul>
+				</li>				
+				<li>-u, --update
+					<ul>
+						<li>Copia solamente cuando <span class="variable">origen</span> es mas nuevo que <span class="variable">destino</span>, o bien este último no posee definido tiempo de modificación.</li>
+					</ul>
+				</li>				
+			</ul>			
+		<h3>Ejemplos</h3>
+			<ul>
+				<li>
+					<p><code>$sudo cp -rp /home/userA/temp /home/userB/backup/temp_de_userA</code></p>
+						<ul>
+							<li>Si la carpeta temp_de_userA no esta creada la crea.</li>
+							<li>Preserva los atributos de directorios y atributos del userA, ya que ponemos la opcion -p, en caso de no ponerlos pondría los atributos de root.</li>
+							<li>Si no ponemos la opcion -r da error "cp: se omite el directorio ..." </li>
+						</ul>	
+				</li>
+			</ul>	
+		</p>
+	</article>	
+	<footer>
+		<a href="../../index.html">Ir al inicio</a>
+	</footer>	
+</body>
+</html>

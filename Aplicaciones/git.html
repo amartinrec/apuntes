@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>git</title>
+</head>
+<body>
+	<head>
+		<h1>git</h1>
+	</head>
+	
+	<section>
+		<h1>Información - Links</h1>
+		<ul>
+			<li><a href="https://git-scm.com">Página oficial de gim (git-scm.com)</a></li>
+			<li><a href="https://git-scm.com/book/es/v1">Libro oficial - Pro Git book (git-scm.com)</a></li>
+		</ul>
+	</section>
+
+	<section>
+		<h1>Información - Videotutoriales</h1>
+		<ul>
+			<li><a href="https://youtu.be/NmbqlkLTOSI">Clase práctica de Git y Github (Desarrolloweb.com)</a></li>
+			<li><a href="https://youtu.be/R3BXUJB57tU?list=PLXAvBLatnjPMbn3ywO9T45e8xPeqkpwjh"> Git para diseñadores #designIO  (Desarrolloweb.com)</a></li>
+			<li><a href="https://youtu.be/_AhDWKvmykE">Git para programadores #programadorIO (Desarrolloweb.com)</a></li>
+			<li><a href="https://www.youtube.com/watch?v=I-d9_l7myXw">Como subir tu sitio web usando Github Pages en menos de 5 minutos</a></li>
+			<li><a href="https://www.youtube.com/watch?v=nN6QuNqmAwk">GitHub Pages and Jekyll Beginner Video</a></li>
+			<li><a href="https://www.youtube.com/watch?v=zH3I1DZNovk&list=PL9xYXqvLX2kMUrXTvDY6GI2hgacfy0rId">Git - Código Facilito (Lista de reproducción)</a></li>
+			<li><a href="https://www.youtube.com/watch?v=jSJ8xhKtfP4&list=PLTd5ehIj0goMCnj6V5NdzSIHBgrIXckGU">Tutorial de Git - Makigas (Lista de reproducción)</a></li>
+		</ul>
+	</section>
+	<section>
+		<h1>Información - Repositorios</h1>
+		<ul>
+			<li><a href="https://github.com/">GitHub (https://github.com)</a></li>
+			<li><a href="https://about.gitlab.com/">GitLab (https://about.gitlab.com)</a></li>
+			<li><a href="https://bitbucket.org/">Bitbucket (https://bitbucket.org)</a></li>
+		</ul>
+	</section>
+
+	<section>
+		<h1>Instalación</h1>
+
+			<h2>Instalación en Windows XP</h2>
+			<ul>
+				<li>Descargar el instalador Git-2.8.1-32-bit.exe desde <a href="https://git-for-windows.github.io/">https://git-for-windows.github.io/</a></li>
+			</ul>	
+			<h2>Instalación en Linux</h2>
+			<ul>
+				<li>apt-get install git</li>
+			</ul>
+
+	</section>
+
+	<!-- 
+		fichero 				: &lt;fichero&gt;				Ejemplo: index.html
+		carpeta del proyecto 	: &lt;carpeta del proyecto&gt;	Ejemplo: apgit
+		nuestro nombre		 	: &lt;nuestro nombre&gt;		Ejemplo: Ángel Martín
+		nuestro email		 	: &lt;nuestro email&gt;			Ejemplo: amartin@gmail.com
+	-->	
+
+	<section>
+		<h1>Clase práctica de Git y Github</h1>
+			<article>
+				<h2>Modalidad 1: Empiezo a trabajar en local (en mi maquina)</h2>
+				<ul>
+					<li>
+						<h3>Configuración de nuestro git</h3>
+						<ol>
+							<li><code>$git config --global user.name &lt;nuestro nombre&gt;</code> para establecer el nombre por defecto que se usa git cuando hacermos un commit</li>
+							<li><code>$git config --global user.email &lt;nuestro email&gt;</code> para establecer el email  por defecto que se usa git cuando hacermos un commit</li>
+						</ol>
+						<p>Sirve para que los commit aparezcan con el usuario y email definido. Cuando haces un <code>$git log</code> se puede apreciar que ha puesto "Author: &lt;nuestro nombre&gt; &lt;nuestro email&gt; " en : <br><code>commit a63a5e0c5c2233ca59eb81c38083b854851c191b<br>Author: <em>Ángel Martín &lt;amartin@gmail.com&gt;</em><br>Date:   Mon May 30 05:19:50 2016 +0200</code>
+						</p>
+					</li>
+					<li>
+						<h3>Creación de la carpeta del proyecto y del repositorio local</h3>	
+						<ol>
+							<li>Creamos una carpeta local donde vamos a ir almacenando los ficheros de nuestro proyecto &lt;carpeta del proyecto&gt; y creamos un &lt;fichero&gt; en la &lt;carpeta del proyecto&gt;.</li>
+							<li>Creacion del repositorio local usando el comando <code>$git init</code><br/>Sabemos que se ha creado un repositorio porque en la &lt;carpeta del proyecto&gt; aparecerá un directorio ".git" donde se almacena la información del repositorio.</li>	
+							<li>Añadir los ficheros al repositorio</li>
+						</ol>	
+					</li>
+					<li>
+						<h3></h3>
+					</li>
+					<li>
+						<h3>Proceso</h3>	
+						<ol>
+							<li>Añadir el fichero a la zona de index (staging area) usando el comando <code>$git add &lt;fichero&gt;</code></li>
+							<li>Para saber el estado de mis ficheros empleamos el comando <code>$git status</code></li>
+							<li>Hacer commit empleando el comando <code>$git commit -m "mensaje"</code> donde "mensaje" es que se asocia al commit.</li>
+							<li>Para saber el estado de mis ficheros empleamos el comando <code>$git status</code></li>
+						</ol>					
+					</li>
+					<li>
+						<h3>Subir el proyecto a un repositorio a GitHub</h3>
+						<ol>
+							<li>Crear un usuario en GitHub</li>
+							<li>Vincular el respositorio remoto en el repositorio local con el comando <code>$git remote add remoto -url del repositorio remoto -</code></li>
+							<li>Listamos todos los remotos con el comando <code>git remote -v</code></li>
+							<li>Empujamos los cambios a GitHub con el comando push desde el repositorio local al repositorio remoto.<code>$git push remoto master</code></li>
+
+						</ol>
+					</li>
+				</ul>
+			</article>	
+	</section>
+
+	<section>
+		<h1>Los tres estados de los archivos</h1>
+		<img src="local_operations.png"/>
+		<p>Git tiene tres estados principales en los que se pueden encontrar tus archivos:</p>
+			<ul>
+				<li>Confirmado (committed): Confirmado significa que los datos están almacenados de manera segura en tu base de datos local.</li>
+				<li>Modificado (modified): Modificado significa que has modificado el archivo pero todavía no lo has confirmado a tu base de datos.</li>
+				<li>Preparado (staged): Preparado significa que has marcado un archivo modificado en su versión actual para que vaya en tu próxima confirmación.</li>
+			</ul>	
+		<p>Esto nos lleva a las tres secciones principales de un proyecto de Git:
+			<ul>
+				<li>El directorio de Git (Git directory): El directorio de Git es donde Git almacena los metadatos y la base de datos de objetos para tu proyecto.Es la parte más importante de Git, y es lo que se copia cuando clonas un repositorio desde otro ordenador.</li>
+				<li>El directorio de trabajo (working directory): El directorio de trabajo es una copia de una versión del proyecto. Estos archivos se sacan de la base de datos comprimida en el directorio de Git, y se colocan en disco para que los puedas usar o modificar.</li>
+				<li>El área de preparación (staging area): El área de preparación es un sencillo archivo, generalmente contenido en tu directorio de Git, que almacena información acerca de lo que va a ir en tu próxima confirmación. A veces se le denomina índice, pero se está convirtiendo en estándar el referirse a ella como el área de preparación.</li>
+			</ul> 
+		 <p>El flujo de trabajo básico en Git es algo así:
+		 	<ol>
+				<li>Modificas una serie de archivos en tu directorio de trabajo.</li>
+				<li>Preparas los archivos, añadiendolos a tu área de preparación.</li>
+				<li>Confirmas los cambios, lo que toma los archivos tal y como están en el área de preparación, y almacena esas instantáneas de manera permanente en tu directorio de Git.</li>
+		 	</ol>
+		<p>Si una versión concreta de un archivo está en el directorio de Git, se considera confirmada (committed).Si ha sufrido cambios desde que se obtuvo del repositorio, pero ha sido añadida al área de preparación, está preparada (staged). Y si ha sufrido cambios desde que se obtuvo del repositorio, pero no se ha preparado, está modificada (modified). </p>
+	</section>
+	<section>
+		<h1>Comandos</h1>
+		<ul>
+			<li>Historico de las confirmaciones (commit) realizadas se puede ver con <code>$git log</code></li>
+			<li>Mostrar los repositorios remotos:<br><code>$git remote</code></li>
+			<li>Mostrar los repositorios remotos con su URL asociada:<br><code>$git remote -v</code></li>
+			<li>Añadir repositorios remotos:<br><code>$git remote add [nombre]</code> <br/>
+				Ejemplo:<br><code>$ git remote add apuntes git://github.com/amartinrec/apuntes.git</code></li>
+			<li>Renombrar repositorios remotos:<br><code>$ git remote rename &lt;nombre_actual&gt; &lt;nuevo_nombre&gt;</code></li>	
+			<li>Eliminar repositorios remotos:<br><code>$ git remote rm *nombre_actual*</code></li>
+			<li>Recibiendo de tus repositorios remotos:<br><code>$ git fetch [remote-name]</code></li>
+			<li>Listar las propiedades de Git:<br><code>$git config --list</code><br>
+				En Ubuntu crea un fichero <q>/home/&lt;usuario&gt;/.gitconfig</q> donde almancena los valores de las propiedades</li>
+			<li>Establecer nombre de usuario:<br><code>$git config --global user.name "Nombre"</code></li>
+			<li>Establecer direccion de correo electronico:<br><code>$git config --global user.email "direccion@correo"</code></li>
+			<li>Ayuda:<br><code>$git help &lt;comando&gt;</code></li>
+			<li>Ayuda:<br><code>$git &lt;comando&gt; --help</code></li>
+			<li>Inicializando un repositorio en un directorio existente:<br><code>$git init</code></li>
+		</ul>
+	</section>
+	<section>
+		<h1>Notas</h1>
+		<p>Variable ps1 se puede configurar dentro </p>
+		<p>Subir varios ficheros a la vez</p>
+		<p>la rama por defecto se llama master</p>
+	</section>
+	<footer>
+		<hr><a href="../index.html">Ir al inicio</a>
+	</footer>
+</body>
+</html>

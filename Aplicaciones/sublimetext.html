@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Sublime Text</title>
+</head>
+<body>
+	<header>
+		<h1>Sublime Text</h1>
+	</header>
+	<article>
+		<h1>Instalación de Sublime Text en Linux</h1>
+		<ol>
+			<li><code>sudo add-apt-repository ppa:webupd8team/sublime-text-2</code></li>
+			<li><code>sudo apt-get update</code></li>
+			<li><code>sudo apt-get install sublime-text</code></li>
+		</ol>	
+	</article>
+	<article>
+		<h1>Desinstalación de Sublime Text en Linux</h1>
+		<ol>
+			<li><code>sudo apt-get remove sublime-text</code></li>
+			<li>Luego es necesario borrar la carpeta /home/&lt;usuario&gt;/.config/sublime-text-2 que es donde guarda las configuraciones de la aplicación.</li>
+		</ol>	
+	</article>
+	<article>
+		<h1>Atajos de teclado en Sublime Text</h1>
+		<section>
+			<h1>General</h1> 
+				<ul>
+					<li>BUSCADOR     Ctrl P</li>
+					<li>LISTADO COMANDOS   Ctrl Shift  P</li>
+					<li>MULTICURSOR    Ctrl Shift  L    Seleccionamos varias lineas y pulsamos la combinación</li>
+					<li>MOSTRAR/OCULTAR SIDEBAR Ctrl  B</li>
+				</ul>
+		</section>
+		<section>
+			<h1>Ficheros</h1>
+				<ul>
+					<li>NEW      Ctrl  N</li>
+					<li>OPEN     Ctrl  O</li>
+					<li>SAVE     Ctrl  S</li>
+					<li>SAVE AS     Ctrl Shift S</li>
+					<li>SAVE WITH ENCODING  -      UTF-8 (Por defecto), ISO-8859-1(Para acentos)</li>
+					<li>CLOSE      Ctrl  W</li>
+			  	</ul>
+		</section>
+		<section>
+			<h1>EMMET</h1>
+				<ul>
+					<li>Envoltura     Ctrl Shift G</li>
+				</ul>
+		</section>
+		<section>
+			<h1>Lineas</h1>
+				<ul>
+					<li>SELECCIONAR    Ctrl   L</li>
+					<li>INSERTAR     Ctrl Shift  Intro</li>
+					<li>BORRAR      Ctrl Shift  K</li>
+					<li>BORRAR HASTA FIN   Ctrl K  K</li>
+					<li>BORRAR HASTA INICIO  Ctrl K  Retroceso</li>
+					<li>BAJAR      Ctrl Shift  Abajo</li>
+					<li>SUBIR      Ctrl Shift  Arriba</li>
+					<li>SALTO AL FINAL    Ctrl   Der</li>
+					<li>SALTO AL INICIO   Ctrl   Izq</li>
+					<li>DUPLICAR     Ctrl Shift  D</li>
+					<li>UNIR      Ctrl   J</li>
+					<li>IR A UNA Nº LINEA   Ctrl   G</li>
+				</ul>			
+		</section>
+		<section>
+			<h1>Palabras</h1>
+				<ul>
+					<li>SELECCIONAR    Ctrl D      Pulsando varias veces, realiza selección múltiple</li>
+				</ul>			
+		</section>
+		<section>
+			<h1>HTML y XML</h1>
+				<ul>
+					<li>SELECCIONAR ETIQ   Ctrl Shift A    Seleccionar el contenido dentro de una etiqueta.</li>
+					<li>CERRAR ETIQ     Alt   .</li>
+					<li>INSERTAR COMENTARIO  Ctrl   /</li>
+				</ul>			
+		</section>
+		<section>
+			<h1>Proyectos</h1>
+				<ul>
+					<li>SWITCH PROJECT    Ctrl Alt  P    Switch project in Window ...</li>
+				</ul>
+		</section>
+		<section>
+			<h1>Tasks</h1> (Acceso desde el menu Preferences - Package Settings - PlainTasks)
+				<ul>
+					<li>NUEVO ELEMENTO   Ctrl   Intro</li>
+					<li>COMPLETAR ELEMENTO  Ctrl  D</li>
+					<li>CANCELAR ELEMENTO  Alt   C</li>
+					<li>ARCHIVAR ELEMENTOS  Ctrl Shift A</li>
+				</ul>
+		</section>
+		<section>
+			<h1>Multicursor</h1>
+				<ul>
+					<li>CTRL D: Va seleccionando una a una todas las palabras que coinciden y situando un cursor en cada una de ellas</li>
+					<li>ALT F3: Selecciona de golpe todas las palabras que coinciden y situa un cursor en cada una de ellas</li>
+				</ul>
+		</section>
+	</article>
+	<article>
+		<h1>Codificación de los ficheros de texto en Sublime Text</h1>
+		<p>Los ficheros de texto por defecto de sublime text se guardan con la codificación utf-8, los acentos y las ñs no se ven en el navegador, aparece una A mayuscula + un simbolo. </p>
+		<h2>¿Como saber la codificación de un fichero de texto?</h2>
+		<code>$file --mime-enconding archivo.txt</code>
+		<h2>¿Como guardar un fichero con otra codificación desde Sublime?</h2>
+		<p>File > Save with Encoding > ISO-8859-1, de este modo los acentos y las ñ se verán.</p>
+		<h2>¿Como cambiar la configuración se Sublime para que guarde en formato iso-8859-1?</h2>
+		<p>Modificar la linea "default_encoding": "Western (ISO 8859-1)",del fichero Preferences.sublime-settings</p>
+	</article>		
+	<article>
+		<h1>Plugins interesantes de Sublime Text</h1>
+		<ul>
+			<li>Emmet : Antiguo Zen Coding, ayuda para edición HTML</li>
+			<li>PlainTasks : Todo lists simple</li>
+			<li>Alignment : Tabula automaticamente el codigo.</li>
+			<li>LiveReload : Visualizar ficheros automaticamente en el navegador</li>
+		</ul>	
+	</article>
+	<article>
+		<h1>Cambiar el tema a Nexus</h1>
+		<p>Cambiar el tema de defecto por el tema nexus</p>
+		<ol>
+			<li>Ctrl - Mayus - P</li>
+			<li>Package Control : Install Package</li>
+			<li>Teclear "theme"</li>
+			<li>Escoger "Theme Nexus"</li>
+			<li>Ir a Preferences / Setting-User</li>
+			<li>Añadir linea : "theme":"Nexus:sublime-theme"</li>
+		</ol>
+	</article>
+	<article>
+		<h1>Visualizar fichero HTML desde Sublime Text en Firefox</h1>
+		<ol>
+			<li>"Tools/Build System/New Build System":</li>
+			<li>"cmd": ["ruta/firefox", "$file"]</li>
+			<li>Guardar archivo con Firefox.sublime-build</li>
+			<li>Salir y volver a entrar</li>
+			<li>Activar Firefox , Tool > Build Systems > Firefox</li>
+			<li>Pulsar Ctrl-B para ver la pagina HTML en el navegador</li>
+		</ol>
+	</article>
+	<article>
+		<h1>Snippets</h1>
+		<section>
+			<h1>Crear un snippet</h1>
+			<p>Tools | New Snippet</p>
+		</section>
+		<section>
+			<h1>Formato de un snippet</h1>
+			<code>&lt;snippet&gt;</code><br>
+			<code>&lt;content&gt;&lt;![CDATA[Aqui va el contenido]]</code><br>
+			<code>&lt;tabtrigger&gt;hola&lt;/tabtrigger&gt;</code>  Palabra que dispara el snippet al pulsar tab<br
+			>
+			<code>&lt;scope&gt;text.html&lt;/scope&gt;</code> Ámbito para limitar donde se disparará el snippet. El ambito para ficheros html es "text.html"<br>
+			<code>&lt;description&gt;&lt;/description&gt;</code> Se usa cuando se muestra el snippet en el menu de Snippets, si no se pone descripción muestra el fichero del snippet.<br>
+			<code>&lt;/snippet&gt;</code><br>
+		</section>
+		<section>
+			<h1>Donde se guardan</h1>
+			<p>Se pueden guardar en la carpeta de cualquier paquete, sin embargo, para simplificar guardar en Packages/User </p>
+		</section>
+		<section>
+			<h1>Fuente</h1>
+			<a href="http://docs.sublimetext.info/en/latest/extensibility/snippets.html">http://docs.sublimetext.info/en/latest/extensibility/snippets.html</a>
+		</section>
+	</article>
+	<article>
+		<h1>Instalación de package control</h1>
+		<p>Ver https://sublime.wbond.net/installation#st</p>
+		<p>Nota: Copiando el fichero "Package Control.sublime-package " en /home/&lt;usuario&gt;/.config/sublime-text-2/Installed Packages y reiniciando ya esta instalado.</p>
+	</article>
+	<article>
+		<h1>Ficheros a la izquierda</h1>
+		<p>Para que se muestre el panel de ficheros a la izquierda ir a : View / Side Bar / Show Side Bar </p>
+		<p>Para que se muestre una carpeta a la izquierda : File / Open Folder</p>
+	</article>
+	<footer>
+		<hr><a href="../index.html">Ir al inicio</a>
+	</footer>
+</body>
+</html>

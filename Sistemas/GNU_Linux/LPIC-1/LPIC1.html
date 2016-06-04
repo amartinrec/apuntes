@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>103.1. Trabajar con la línea de comandos</title>
+</head>
+<body>
+	<h1>LPIC - Capitulo 1 - Herrramientas de la linea de comandos</h1>
+
+	<h2>Definición</h2>
+		<ul>
+			<li>Consolas(Shells)de Linux son los programas que reciben e interprentan los comandos de tipo texto.</li>
+		</ul>	
+
+	<h2>Tipos de consolas predeterminadas</h2>
+		<ul>
+			<li>Consola interactiva predeterminada
+				<ul>
+					<li>Es un programa que utiliza el usuario para : Introducir comandos, Ejecutar programas, Ejecutar Scripts, ...
+					</li>
+				</ul>
+			</li>
+			<li>Consola predeterminada del sistema
+				<ul>
+					<li>Linux utiliza para ejecutrar scripts de consola del sistema generalmente durante el inicio.</li>
+				</ul>
+			</li>	
+		</ul>
+
+
+	<h2>Comandos internos y externos </h2>
+
+	<ul>
+		<li>La mayor parte de los comandos de linux son externos, esto es, son independientes de la consola, sin embargo, hay un conjunto de comandos internos de la consola.</li>
+		<li>Los comandos internos son los integrados en la consola, son los responsables de llevar a cabo algunas tareas comunes.</li>
+		<li>Para determinar si un comando es interno se emplea el comando type seguido del comando del cual queremos saber si es interno. Con la opcion -a muestra si es interno y externo.</li>
+		<li>Ejemplos
+			<ul>
+				<li>Comandos internos
+					<ul>
+						<li>Ejemplo : $type cd</li>
+						<li>cd is a shell builtin (cd es una orden interna del shell)</li>
+					</ul>
+				</li>
+				<li>Comandos externos
+					<ul>
+						<li>Ejemplo : $type bash</li>
+						<li>bash is /bin/bash</li>
+					</ul>
+				</li>
+				<li>Comandos externos que hace lo mismo que un comando interno
+					<ul>
+						<li>Ejemplo: $type -a pwd</li>
+						<li>pwd is a shell builtin (pwd es una orden interna del shell)</li>
+						<li>pwd is /bin/pwd</li>
+					</ul>		
+				</li>
+			</ul>
+		</li>		
+	</ul>
+
+	<h2>Historia de las Command Shells</h2>
+		<ul>
+			<li>sh 
+				<ul>
+					<li>Was written by Steve Bourne at AT&T in 1977</li>
+					<li>Often known as the Bourne Shell.</li>
+					<li>All other shells are descended from it in some fashion and it is available on all systems that have a UNIX bloodline.</li>
+				</ul>
+			</li>
+			<li>csh 
+				<ul>
+					<li>was written by Bill Joy at UC Berkeley and released in 1978.</li>
+					<li>The internal syntax is quite different than sh and is designed to resemble the C programming language, and hence the name.</li>
+				</ul>
+			</li>	
+			<li>tcsh  
+				<ul>
+					<li>was originally developed by Ken Greer at Carnegie Mellon University in the late 1970's;</li>
+					<li>the t in tcsh stands for TENEX, an operating system that was used on some DEC PDP-10's.</li>
+					<li>It has many additional features as compared with csh and on virtually all modern systems csh is just a link to tcsh.</li>
+				</ul>
+			</li>	
+			<li>ksh
+				<ul>
+					<li>was written by David Korn at AT&T and appeared in 1982</li>
+					<li>often known as the Korn shell.</li>
+					<li>It was designed to be a major upgrade to sh and is backward compatible with it, and brings in some of the features of tcsh, such as command line history recall. This shell has long been a favorite of many system administrators.</li>
+				</ul>
+			</li>	
+			<li>bash
+				<ul>
+					<li>is a product of the GNU project and was created in 1987.</li>
+					<li>It was designed as a major upgrade of sh; the name stands for Bourne Again Shell.</li>
+					<li>It has full backward compatibility with sh and partial compatibility with ksh.</li>
+					<li>Consola por defecto mas común para cuentas de usuario.</li>
+				</ul>
+			</li>	
+			<li>zsh
+				<ul>
+					<li>Evolucion de la consola Korn</li>
+				</ul>
+			</li>
+		</ul>
+
+	<h2>Observaciones</h2>
+	
+		<ul>
+			<li>sh es un link a bash, csh es un link a tcsh</li>
+			<li>El archivo /bin/sh es un enlace simbolico a la consola por defecto del sistema, en Linux suele ser /bin/bash, en Ubuntu apunta a /bin/dash</li>
+			<li>On all Linux systems sh is just a link to bash, but scripts which are invoked as sh will only work without the bash extensions. A similar relationship exists between csh and tcsh.</li>
+		</ul>
+
+	<br /><br />
+	<hr><a href="../index.html">Ir al inicio</a>
+
+</body>	
+</html>

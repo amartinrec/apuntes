@@ -1,0 +1,874 @@
+------------------------------------------------------------------------------
+CURSO DE LINUX
+------------------------------------------------------------------------------
+Profesor: Canaves
+
+Aplicaciones basadas en Linux: Hirens, Vmware
+
+Zentyal es un distribucion muy parecida a Windows.
+
+------------------------------------------------------------------------------
+INSTALACION DE VIRTUAL BOX ADITIONS
+------------------------------------------------------------------------------
+- Desde terminal : Ejecutar como administrador el programa /media/angel/<carpeta de virtual box>/VBoxLinuxAdditions.run
+
+¿COMO CAMBIAR DE TERMINAL?
+
+- ctrl + alt + f1, f2, f3 ,f4 , f5, f7 (Vuelves al entorno grafico) funciona tambien en Virtual Box.
+
+------------------------------------------------------------------------------
+UNITY
+------------------------------------------------------------------------------
+- Revisar si esta instalado el paquete de idiomas.
+	- Ir a configuracion del sistema - Soporte de idiomas
+
+- Servicio Landscape, es para guardar nuestra configuración en la line.
+
+------------------------------------------------------------------------------
+INSTALACION DE INTERFACE GRAFICO XFCE
+------------------------------------------------------------------------------
+- sudo apt-get install xubuntu-desktop	
+
+------------------------------------------------------------------------------
+DIRECTORIOS
+------------------------------------------------------------------------------
+
+/etc
+	Ficheros de configuracion
+
+/etc/init
+	Todos los ficheros de configuracion para cuando arranca la maquina.
+
+/etc/fstab
+	lista de discos y particiones disponibles
+
+/etc/mtab
+	Mounted file systems table.
+
+/etc/services
+	Servicios de red
+
+/proc
+	todos los procesos que hay abiertos ahora mismo
+
+/proc/cpuinfocd
+
+/run 
+
+/var/log
+	Guarda el registro de todos los logs que generan las aplicaciones
+
+/var/log/dmesg
+	Informacion de lo que ha ido pasando en el sistema
+
+/root 
+	es el home del usuario.
+
+/dev 
+	Son los dispositivos de la maquina, los interpreta como archivos.
+
+/dev/disk
+	Permite ver los discos por categorias
+
+/opt
+
+/usr 
+	donde se instalan las aplicaciones
+
+/lost+found	
+
+------------------------------------------------------------------------------
+COMANDOS
+------------------------------------------------------------------------------
+
+BUSQUEDA DE FICHEROS:
+	which/whereis/locate/find
+
+MOSTRAR FICHEROS:	
+	cat/tac/less/tail/head
+
+lsof 
+	nos indica todos los archivos que hay abiertos este momento.
+lspci 
+	lista los que hay conectado a la maquina
+lsusb 
+	lo que hay conectado por usb
+touch
+	crea un fichero en blanco si no existe y si existe le cambia la hora a dia de hoy.	
+whereis
+	busca donde esta un comando
+ln -s origen acceso_directo
+	Crea un acceso directo
+cp
+	copia de ficheros		
+pwd
+	en que directorio estamos	
+whoami		
+	que usuario soy
+who
+	usuarios conectados
+w
+	Muestra quien esta logado y que esta haciendoq.
+
+time
+	comando ha tardado un comando en ejecutarse		
+date
+	cambiar la fecha y hora
+history	
+	Ultimos comandos ejecutados
+!! 
+	Ejecuta la ultima instruccion
+!n 
+	Ejecuta el comando n que aparece en el listado history
+cal
+	calendario
+tail
+	muestra las ultimas lineas del fichero
+ps -ax
+	muestra los procesos activos en la maquina
+top
+
+kill <id del proceso>
+	mata el proceso
+killall
+	mata el proceso y su hijos	
+
+kill -9
+
+df
+	tamaño libre en disco
+du 
+	para ver lo que ocupa una carpeta	
+	-s tambien los subdirectorios
+
+ps -ax | grep proceso
+	busca un proceso en concreto en la lista de procesos
+wc 
+	cuenta palabras
+nl	 	
+	numera las lineas de un fichero de texto
+df 	
+	muestra los sistemas de ficheros montados el espacio usado y el disponible.
+du
+	
+uname -a
+	informacion del kernel de linux que estamos utilizando.
+fdisk
+	formateo de discos, gestion de particiones.
+fsch
+	hace un chequeo de disco. Si marcamos un 1 al final de la linea en fstab tambien hace el chequeo.
+mv
+	mover o renombrar archivo
+rm
+	Eliminar archivo.
+cp
+	copiar archivos		
+ln 
+	para hacer enlaces
+
+sudo
+	elevar privilegios y da permisos de administrador
+clear
+	limpiar escritorio			
+file
+	determina el tipo de fichero
+wc
+	cuenta palabras de un fichero de texto	
+
+more 
+	para paginar la salida de texto.
+less	
+mount
+	montar unidades de red
+umount
+	desmontar unidades de red
+
+lsblk -f	
+	Otra forma de ver las particiones
+
+wget
+	para descargar un fichero desde una url.
+
+make
+	para compilar.
+ping
+	
+gconf es el regedit del entorno unity
+
+------------------------------------------------------------------------------
+Tener diferentes sesiones gráficas
+------------------------------------------------------------------------------
+
+Se tiene que modificar el fichero X11 para que se pueda hacer.
+Las sesiones graficas son a partir de ctrl+alt+f7, f8, f9, ...
+Se pueden abrir aplicaciones indicandole la sesion grafica donde queremos abrirla poniendo $comando :n, (donde n es la sesion grafica donde queremos que se abra).
+
+
+------------------------------------------------------------------------------
+PERMISOS DE USUARIOS Y GRUPOS
+------------------------------------------------------------------------------
+
+CAMBIAR LOS PERMISOS DE UN USUARIO
+
+	Para poder cambiar los permisos de un archivo tengo que ser el propietario o bien superusuario.
+
+	chmod u+rwx <fichero>
+		da pemisos al usuario de r, w, x sobre el fichero
+	chmod g+rwx <fichero>
+		da permisos al grupo de r,w,x sobre el fichero
+	chmod o+rwx <fichero>
+		da permis os a otros de r,w,x sobre el fichero
+	chmod u-rwx <fichero>
+		quita los permisos al usuario de r,x,w sobre el fichero
+	chmod UGO <fichero>
+
+	RWX
+	124
+
+	chmod 744 <fichero>
+
+	permisos 111001001
+
+OTROS
+
+	adduser - ar usuario
+	useradd crear usuario
+	chown - cambiar propietario de un archivo ,	permite cambiar el propietario y el grupo si ponemos chown propietario:grupo <fichero>
+	grpadd - crear grupo
+	chgroup - cambiar grupo de un archivo
+	passwd - cambiar la contraseña
+
+FICHEROS DE CONFIGURACION
+
+	/etc/group - contiene informacion de los grupos y de los usuarios que pertences a los grupos.
+	/etc/passwd - contiene los usuarios
+	/etc/shadow - contiene las contraseñas encriptadas los usuarios.
+	/etc/gshadow - contiene la información oculta de las cuentas de grupo.
+
+	
+------------------------------------------------------------------------------
+CONFIGURACIÓN DE RED
+------------------------------------------------------------------------------
+
+Mi ip en la prueba sera : 192.168.10.4
+
+Ojo: El servicio network-manager se encarga de la configuracion cuando se hace desde el entorno grafico, y se pelea con la configuración manual tocando los ficheros /etc/network/interfaces etc.
+
+sudo service network-manager stop
+	Para parar el servicio network-manager
+
+Ademas de network manager tambien tenemos el comando wincd.
+
+CONFIGURACION DESDE EL ENTORNO GRAFICO
+
+	Configuracion del sistema
+	Red
+	Cableada
+
+PARA CAMBIAR LA IP MANUALMENTE DURANTE UN MOMENTO PUNTUAL
+
+	sudo ifconfig eth0 192.168.20.1 netmask 255.255.255.0 - forma puntual de cambiar mi IP.
+	sudo route add add default gw 192.168.20.254 eth0 - para configurar la gw sobre la ip 192.168.20.1
+	sudo ifconfig eth0 192.168.10.1 mask 255.255.255.0
+	sudo ip addr flush eth0 - quitar toda la configuracion de ip y se la vuelve a asignar desde el network manager.
+
+
+CONFIGURACION MANUAL DE LA RED
+
+	/etc/network/interfaces
+		Dentro del fichero de configuracion  /etc/network/interfaces  
+		Hay que poner los siguientes valores:
+
+		auto eth0
+		iface eth0 inet static
+		address 192.168.10.4
+		netmask 255.255.255.0
+		gateway 192.168.10.1
+		broadcast 192.168.10.255 <- no es necesario
+		dns-nameservers 8.8.8.8, 8.8.4.4 <- no es necesario indicarlo aqui se pueden especificar en otro archivo.
+
+	/etc/hostname 
+		Contiene el nombre de nuestra maquina.
+
+	/etc/hosts
+		Para asociar un nombre a una IP.
+
+	/etc/resolv.conf
+		Dentro del fichero de configuracion: /etc/resolv.conf hay que poner los servidores dns, siempre y cuando no los hayamos puesto en /etc/network/interfaces
+
+LEVANTAR Y BAJAR LA CONEXION
+
+	sudo ifconfig eth0 up - levanta la conexion eth0
+	sudo ifconfig eth0 down - baja la conexion eth0
+
+	Para saber si una conexion esta levantada hacemos un ifconfig, si aparace es que esta levantada y si no aparece es que no esta levantada.
+
+	sudo ifup - tarjeta de red levantada
+	sudo ifdown - tarjeta de red no levantada.
+
+	Estos dos comandos hacen lo mismo que sudo ifconfig eth0 up y down.
+
+
+
+CONFIGURACION DE WIFI
+
+	Instalar el paquete wireless-tools si no esta instalado.
+
+	iwlist wlan0 scanning - busca las wifis que hay cercanas.
+
+	iwconfig wlan0 mode managed - para configura la tarjeta wifi
+	iwconfig wlan0 essid "Parc Bit"
+	iwconfig wlan0 key <la contraseña>
+	iwconfig wlan0 commit
+	
+	Luego hay que modificar el fichero de interfaces /etc/network/interfaces poniendo :
+
+		auto wlan0
+		iface wlan0 inet dhcp
+		wpa-ssid "Parc Bit"
+		wpa-key-mgmt WPA-PSK
+		wpa-group TKIP CCMPb
+		wpa-psk <la contraseña>
+
+COMPARTIR RECURSOS CON SAMBA
+
+Se pueden emplear SAMBA o NFS
+SAMBA permite compartir entre Linux y Windows y MAC
+NFS tambien pero esta mas enfocado a Linux.
+
+- Boton derecho sobre la carpeta.
+- Recurso compartida de red local	
+- Esto hace unas instalacion de paquetes, 
+
+Comandos:
+
+	smbclient - L 192.168.10.2 
+	smbpasswd -a nombreusuario
+		Esto crea un usuario especifico para acceder a un recurso.
+
+AÑADIR RECURSOS MANUALMENTE
+
+	/etc/samba/smb.conf
+		Para configurar el servidor de Samba y permite añadir mas recursos compartidos 
+
+	Si queremos añadir un recurso insertamos en el fichero smb.conf los valores :
+
+		[recurso_compartido]
+		host allow = 192.168.10. 
+		comment = comentario del recurso compartido
+		path=/home/angel/carpeta
+		guest ok = yes
+		read only = yes
+		writable = yes
+
+		obs.: Ver man smb.conf para mas informacion.
+
+	Para aplicar los cambios hay que reiniciar el servico se samba, esto es:
+
+		sudo /etc/init.d/smbd restart 
+			o bien en linux mas modernos
+		sudo service smbd restart
+
+INSTALACIÓN DEL CLIENTE SAMBA Y UTILIDADES
+
+	sudo apt-get install cifs-utils
+	
+MONTAR UN RECURSO COMPARTIDO EN OTRA MAQUINA
+
+	sudo mount -t cifs -o username=canaves //192.168.10.5/Compartida /home/angel/Escritorio/CarpetaAngel
+
+	Obs.: sudo mount -t smbfs , sino no funciona con cifs puede ser que se tenga que emplear smbfs.
+
+	Si queremos que se monte al inicio de sesion se tiene que incluir en /etc/fstab poniendo:
+
+	//192.168.10.2/Compartida /home/usuario/carpeta cifs uid=1000, credentials=/etc/credentialessmb 0 0
+
+	donde el fichero 
+	#credencialessmb
+	username=usuario
+	password=*********
+
+	sudo mount -a 
+		Esto monta todo lo que hay en /etc/fstab
+
+COMPARTIR RECURSOS CON NFS
+
+	sudo apt-get install nfs-kernel-server
+		Para instalar el servidor de NFS
+
+	/etc/exports
+		En este fichero podemos indicar las carpetas a compartir.
+
+		Añadimos la linea 
+
+	sudo mount -t nfs //192.168.10.4/Compartida 	
+
+CONFIGURACION DE IMPRESORAS
+
+	Configuracion del sistemas - Impresoras - Añadir - Asistente para añadir impresora.
+
+	Para que se vea es necesario ir que el equipo que tiene la impresora la publique, esto se hace desde las opciones de configuración  
+
+	Antes de comprar impresora para ver si es compatible se puede ver en: www.openprinting.org
+
+	comando : hp-setup 
+	Utilidad para configurar impresora
+
+	Otro modo es mediante ficheros.PID
+
+	Acceso a Servidor de CUPS via web
+		Desde linux localhost:631 da acceso.
+		Desde windows http://ip_maquina_cups:631/printers/nombre_impresora
+		http://ip_maquina_cups:631/classes/nombre_clase
+
+
+
+	
+FICHERO .profile
+
+	Cada vez que iniciamos sesion se ejecuta este script.
+	Desde este script se llama al script .bashrc
+
+FICHERO .bashrc
+
+	Es llamado desde .profile
+
+FICHEROS EN /etc/skel 
+	Incluye los ficheros .profile, .bashrc, que se copiaran en el  /home  cuando se cree un usuario nuevo.
+
+INCLUIR APLICACIONES AL INICIO
+	Buscar "Aplicaciones al inicio" en el buscado de ubuntu.
+
+GESTION DE PAQUETES
+
+	Debian emplea paquetes .deb
+	Red hat emplea paquetes .rpm
+	Otros tipos .tar.gz
+
+apt-get update
+	actualiza nuestros repositorios.
+
+apt-get upgrade
+	actualiza el software instalado via apt-get install a su ultima version.
+
+apt-get dist-upgrade
+	actualiza la version del sistema, por ejemplo pasar de 12.04 a la ultima distribucion de ubuntu.
+
+apt-cache search <nombre>
+	busca nombre de paquetes
+
+apt-get remove <nombre paquete>
+	Desinstala una aplicacion, por defecto los ficheros de configuracion se mantienen, es necessario emplear apt-get purge <nombre paquete> para eliminar tambien la configuración.
+
+
+Software aptitude
+Software Centro de Software
+
+Añadir un repositorio , por ejemplo de gimp
+	add-apt-repository
+
+Instalacion de un paquete .deb
+	dpkg -i <paquete.deb>
+
+dpkg -L <aplicacion>
+	Todos los archivos instalados de la aplicacion.
+
+Observaciones:
+	Si tomamos la direccion deb http://.... y ponemos en el navegador vemos para que distribuciones esta disponible y en la linea que se incluye en /etc/apt/sources.list se puede cambiar deb http://... trusty en lugar de precise.		
+
+Convertir un paquete .rpm a .deb mediante alien
+
+
+INSTALACION DE APLICACION SYNAPSE
+
+Es como el buscador de ubuntu que busca aplicaciones.
+
+sudo add-apt-repository ppa:synapse-core/ppa
+sudo apt-get update
+sudo apt-get install synapse
+
+INSTALACION MANUAL
+
+Como ejemplo se puede probar con la instalacion de 7zip
+
+./configure <- esto puede ser que no sea necesario ejecutarlo porque no este
+make
+sudo make install
+
+http://mogaal.com/articulos/kernel-a-la-debian.html
+
+SOFTWARE DMKS
+
+Dynamic Kernel Module Support (DKMS) es un framework usado para generar módulos del núcleo Linux cuyas fuentes no suelen residir en el árbol fuente del núcleo Linux. DKMS habilita controladores de núcleo para ser automáticamente reconstruidos cuando un nuevo núcleo es instalado lo que hace posible usar un nuevo núcleo inmediatamente, en lugar de esperar que módulos compatibles de terceras partes para ser liberado.
+
+lsmod
+	permite ver los modulos cargados.
+
+https://es.wikipedia.org/wiki/Dynamic_Kernel_Module_Support
+
+permite añadir 
+
+KERNEL Y LOS MODULOS CARGADOS
+
+lsmod
+	muestra los modulos cargados
+
+modinfo
+	informacion sobre los modulos
+insmod
+	
+ARRANQUE DEL SISTEMA
+
+BIOS - MBR
+
+UEFI - GPT
+	Da problemas con la instalacion de Linux, hay que manipular UEFI
+
+Gestores de arranque
+	LILO
+	GRUB
+	BURG
+
+GRUB
+	/boot/grub/grub.cfg
+
+	grub busca los SO de la maquina y si hay mas de uno muestra la lista al iniciar la maquina.
+
+
+NIVELES INIT
+
+0 Apagar maquina
+1 multiusuario
+2 muttiusuario sin red
+3 multiuusuario solo consola
+4 definido por usuairo
+5 todos los servicios
+6 reinicio de maquina
+
+2,3,4,5 son iguales en Ubuntu
+
+runlevel
+	muestre en que init estamosrun
+
+/etc/rc1.d, /etc/rc2.d
+Cuando se ejecuta un init <n>
+Se va a /etc/rc<n>.d	
+cierra los que empieza por "k" y inicia todos lo que empieza por "s"
+
+HERRAMIENTAS PARA CONFIGURACION DE RUNLEVELS
+
+	BUM
+		Aplicacion Boot-Up Manager, Herramienta grafica
+
+	sysv-rc-conf	
+		para configurar runlevels en modo texto
+	
+
+update-rc.d smbd start 30 2 3 4 5. stop 30 0 1 6
+	Iniciar el servicio samba en los 2,3,4,5 y para en el 1 y 6.
+update-rc.d smbd default
+	Cambia el init de un proceso	
+
+/proc
+	Se pueden ver los procesos que hay iniciados
+/proc/cpuinfo
+	Cpu que estoy utilizando
+/proc/meminfo
+	Memoria que estoy utilizando
+
+
+/var/log
+	Donde se almacenan los ficheros log.
+	Recomendacion, que /var/log se monte en una particion aparte para que en caso de que algo de errores continuos no deja la particion de root si espacio.
+/etc/logrotate.conf
+	Relacionado con la generacion de ficheros log
+
+/var/log/dmesg
+	logs al iniciar la maquina
+/var/log/Xorg.0.log
+	logs del entorno grafico
+/var/log/wtmp , /var/log/btmp 
+	Intentos de acceso a mi maquina
+	
+lastlog	
+	muestra el ultimo acceso a la maquina	
+
+dconf-tools (para unity)
+Dconf-editor
+	entorno grafico
+dconf
+	consola
+gconf2	(para gnome)	
+
+UTILIDADES DE DISCO
+
+	dd 
+	gparted
+	clonezilla
+	ddrescue - funciona a veces cuando no funciona clonezilla
+	testdisk
+		para recuperar informacion de un pendrive o un disco.
+	photorec	
+		para recuperar fotos, aunque recupera cualquier tipo de fichero, incluso habiendo borrado tabla de particiones.
+
+
+INFORMACION SOBRE EL PROCESADOR
+
+	vmstat
+		Informacion sobre el procesador
+	lscpu
+		Informacion sobre el procesador
+
+HERRAMIENTAS DE ACCESO REMOTO
+
+---RDP---
+
+	xfreerdp (paquete freerdp-x11)
+		cliente rdp
+
+	rdesktop
+		cliente rdp
+
+	grdesktop
+		cliente rdp version grafica
+	remina
+		cliente rdp y tambien vnc, es de los mas bonitos y funciona muy bien.
+		
+	xrdp
+		servidor rdp
+
+---VNC---
+
+	remmina
+	tightvnc
+	ultravnc
+	realvnc
+	vinagre		
+
+	Dar soporte sin que el cliente tenga los puertos abiertos
+
+	vncviewer -listen
+
+	single click
+
+		What is SC ?
+
+		UltraVNC SC is a mini (166k) UltraVNC Server that can be customized and preconfigured for download by a Customer. UltraVNC SC does not require installation and does not make use of the registry. The customer only have to download the little executable and Click to make a connection. The connection is initiated by the server, to allow easy access thru customers firewall.	
+
+---SSH---
+	
+	Instalacion del servidor SSH
+
+	Paquete: openssh-server
+
+	ssh usuario@maquina
+		Para conectarse a una maquina 
+
+	/etc/ssh/sshd_config
+		Para configurar para por ejemplo cambiarlo de puerto
+
+	scp
+		para poder copiar ficheros entre maquinas remotas
+
+
+---NOMACHINE---
+??
+
+ADMINISTRACION DE MAQUINAS
+
+webmin
+	administrador web de maquinas
+
+NAGIOS 
+
+	Es un servidor de logs.
+	Version open y modulos/plugins que son de pago.
+
+
+LOGROTATE
+
+	Compresion de los ficheros de log.
+
+------------------------------------------------------------------------------------------------
+STICKY BIT
+------------------------------------------------------------------------------------------------
+
+Permite que un usuario puede leer, ejecutar un fichero pero no borrarlo, para ello se pone un uno delante de los tres numeros de asignacion de permisos. El 1 significa que no puede borrarse por otros, si que podria ser borrado por el usuario propietario o por el grupo.
+
+Ejemplo: chmod 1775 fichero	
+
+------------------------------------------------------------------------------------------------
+SUID
+------------------------------------------------------------------------------------------------
+Todos los usuarios que ejecuten este fichero tendran los mismos permisos que tenga el usuario que tiene la S
+
+Ejemplo :chmod 4775 fichero
+rwsrw
+
+
+------------------------------------------------------------------------------------------------
+SGID
+------------------------------------------------------------------------------------------------
+Todos los usuarios que ejecuten este fichero tendran los mismos permisos que tenga el grupo que tiene la S
+
+Ejemplo: chmod 2775 fichero
+
+
+
+
+------------------------------------------------------------------------------------------------
+Scripts
+------------------------------------------------------------------------------------------------
+
+Ejemplo de interprete de comandos mas amigable es "fish"
+
+se puede instalar mediante paquetes y ejecutar simplemente llamandolo.
+
+/etc/shells
+	Muestra los interpretes de comandos instalados
+
+¿Como cambiar el interprete de comandos que emplea un usuario?
+
+Editando el fichero /etc/passwd, y cambiado al final de la linea del usuario el interprete.	
+
+VARIABLES DEL SISTEMA
+
+¿Como mostrar el contenido de una variables?
+	echo $PATH 
+		muestra la variable PATH
+
+	Obs.: Dicha variable indica donde buscar los comandos.	
+
+	Añadir la ruta a la variable PATH
+
+	$export PATH=$PATH:/home/angel/ejecutables
+
+El fichero /etc/bash.bashrc se añade a todos los usuarios.
+
+¿como mostrar todas las variables de entorno?
+	$env
+		Muestra las variables de entorno.
+
+Creacion de un script.		
+
+	#!/bin/bash
+	echo $0 $1 // Esto muestra el nombre del script y luego del primer parametro. Se pueden poner mas.
+
+
+	echo $# // Esto indica la cantidad de parametros que estamos pasando al script
+
+	echo "Este script tiene" $# "parametros"
+
+	echo "El usuario actual es: " $USER
+
+	READ -RSP $'PULSA UNA TECLA PARA CONTINUAR\n' -n1 key
+
+
+if [ -f $1 ]; then
+echo
+
+Ejercicio: Script que permita hacer cambios en los permisos de un fichero
+
+
+
+INSTALACION DE CACHE DNS
+
+	Paquete NSCD	
+
+INSTALAR UN SERVIDOR DE DNS
+
+	sudo apt-get install bind9
+	
+	sudo pico /etc/bind/named.conf.options	
+		Descomentamos forwarders y ponemos las siguientes dos IPs que corresponden a servidores DNS 
+		8.8.8.8 este es un servidor de dns de google
+		80.58.0.33 este es un servidor de dns de telefonica
+		Esto hace que vaya a estas dos IP en caso de no poder resolver la peticiones.
+	
+	Hay que decirle que el servidor de DNS es nuestra propia maquina poniendo 127.0.0.1 en las configuracion de red como servidor DNS. o bien manualmente con el comando.
+	sudo pico /etc/resolv.conf	
+		nameserver 127.0.0.1
+		
+	sudo pico /etc/bind/named.conf.local
+		Hay que añadirle la zona que a mi me interesa, esto es
+		zone "practica.cursolinux.net" {
+			type master;
+			file "etc/bind/db.cursolinux" 
+		}
+
+	sudo cp /etc/bind/db.local /etc/bind/db.cursolinux
+
+	sudo pico /etc/bind/db.cursolinux
+
+		añadir ns    IN    A    192.168.1.200 <- Esto es la IP fija que disponemos.
+
+	reiniciar el servicio bind9 con el comando sudo /etc/init.d/bind9 restard
+
+	sudo cp db.127 	
+
+INSTALACION SERVIDOR DHCP
+
+	Paquete isc-dhcp-server	
+
+	Obs.: El que tenemos instalado por defecto en nuestras maquinas es isc-dhcp-client
+
+
+	sudo apt-get install isc-dhcp-server
+	sudo pico /etc/dhcp.conf
+b
+INSTALACION SERVIDOR FTP	
+
+	Paquete Vsftpd
+	Fichero de configuracion /etc/vsftpd.conf
+
+INSTALACION SERVIDOR WEB
+
+	Paquete LAMP
+	Instalando phpmyadmin instala todas sus dependencias que son Apache, Mysql y PHP	
+
+-------------------------------------------------------------------------------------
+SEGURIDAD 
+-------------------------------------------------------------------------------------
+
+
+PARA BORRAR FICHEROS DE FORMA SEGURA
+
+	Paquete sudo apt-get install secure-delete
+
+	El comando se llama shred
+
+MODULOS PAM
+
+ 	Permite autenticarlos via huella dactilar, o con un LDAP, con tarjeta inteligente tipo DNI electronico.
+
+	sudo libpam-pkcs11
+
+	Lectores compatibles con Linux de tarjetas son los bit4id .
+
+
+	NMAP 
+		-sA 
+		-PN
+		-PS escaneo silencioso por si tiene un fw activado.	
+		-sS escaneo silencioso
+
+lsof
+	ficheros que estan abiertos en nuestra maquina.
+
+netstat 
+	muestra las conexiones activas
+	netstat -lptu 
+
+netcat
+	permite escuchar la red. Sniffer, parecido al wireshark.			
+
+john de ripper
+	permite ver la seguridad de las contraseñas de nuestra maquina atacando el fichero password de etc.
+
+Cambiar los puertos por defecto de los servidores que tengo instalados.	
+
+firewall
+
+	ufw esta por defecto en ubuntu
+	gufw que es en entorno grafico
+	
