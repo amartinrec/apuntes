@@ -1,10 +1,11 @@
 # ============================================================================
-#  La siguiente es una guía paso a paso que explica los procedimientos 
+#  La siguiente es una guÃ­a paso a paso que explica los procedimientos 
 #  implementados por la herramienta JackTheStripper
 #  Copyright 2013 Eugenia Bahit
 #  Licencia: GPL v 3.0
-#  Página del proyecto: http://www.eugeniabahit.com/proyectos/jackthestripper
+#  PÃ¡gina del proyecto: http://www.eugeniabahit.com/proyectos/jackthestripper
 # ============================================================================
+
 
 
 # 1. Establecer un hostname
@@ -14,7 +15,7 @@ echo "127.0.0.1       localhost.localdomain    localhost" >> /etc/hosts
 echo "123.456.78.90   foo.example.org          foo" >> /etc/hosts
 
 
-# 2. Configuración de la zona horaria
+# 2. ConfiguraciÃ³n de la zona horaria
 dpkg-reconfigure tzdata
 
 
@@ -64,7 +65,7 @@ service ssh restart
 #-A INPUT -j DROP
 #-A FORWARD -j DROP
 
-# Agregar aquí las reglas de dropeo para IPs atacantes conocidas
+# Agregar aquÃ­ las reglas de dropeo para IPs atacantes conocidas
 -I INPUT -s 42.121.14.123 -j DROP
 -I INPUT -s 14.63.227.188 -j DROP
 -I INPUT -s 88.191.152.231 -j DROP
@@ -143,7 +144,7 @@ service apache2 restart
 
 
 # 16. Instalar y configurar ModEvasive
-# (prevención de ataques DoS - módulo para Apache)
+# (prevenciÃ³n de ataques DoS - mÃ³dulo para Apache)
 apt-get install libapache2-mod-evasive
 mkdir /var/log/mod_evasive
 chown www-data:www-data /var/log/mod_evasive/
@@ -165,7 +166,7 @@ pear config-set auto_discover 1
 pear install pear.phpunit.de/PHPUnit
 
 
-# 19. Agregar tarea de actualización diaria al cron
+# 19. Agregar tarea de actualizaciÃ³n diaria al cron
 crontab -e
 @daily apt-get update; apt-get upgrade -y
 

@@ -1,3 +1,4 @@
+
 ------------------------------------------------------------------------------
 CURSO DE LINUX
 ------------------------------------------------------------------------------
@@ -12,7 +13,7 @@ INSTALACION DE VIRTUAL BOX ADITIONS
 ------------------------------------------------------------------------------
 - Desde terminal : Ejecutar como administrador el programa /media/angel/<carpeta de virtual box>/VBoxLinuxAdditions.run
 
-¿COMO CAMBIAR DE TERMINAL?
+Â¿COMO CAMBIAR DE TERMINAL?
 
 - ctrl + alt + f1, f2, f3 ,f4 , f5, f7 (Vuelves al entorno grafico) funciona tambien en Virtual Box.
 
@@ -22,7 +23,7 @@ UNITY
 - Revisar si esta instalado el paquete de idiomas.
 	- Ir a configuracion del sistema - Soporte de idiomas
 
-- Servicio Landscape, es para guardar nuestra configuración en la line.
+- Servicio Landscape, es para guardar nuestra configuraciÃ³n en la line.
 
 ------------------------------------------------------------------------------
 INSTALACION DE INTERFACE GRAFICO XFCE
@@ -136,7 +137,7 @@ killall
 kill -9
 
 df
-	tamaño libre en disco
+	tamaÃ±o libre en disco
 du 
 	para ver lo que ocupa una carpeta	
 	-s tambien los subdirectorios
@@ -196,7 +197,7 @@ ping
 gconf es el regedit del entorno unity
 
 ------------------------------------------------------------------------------
-Tener diferentes sesiones gráficas
+Tener diferentes sesiones grÃ¡ficas
 ------------------------------------------------------------------------------
 
 Se tiene que modificar el fichero X11 para que se pueda hacer.
@@ -236,23 +237,23 @@ OTROS
 	chown - cambiar propietario de un archivo ,	permite cambiar el propietario y el grupo si ponemos chown propietario:grupo <fichero>
 	grpadd - crear grupo
 	chgroup - cambiar grupo de un archivo
-	passwd - cambiar la contraseña
+	passwd - cambiar la contraseÃ±a
 
 FICHEROS DE CONFIGURACION
 
 	/etc/group - contiene informacion de los grupos y de los usuarios que pertences a los grupos.
 	/etc/passwd - contiene los usuarios
-	/etc/shadow - contiene las contraseñas encriptadas los usuarios.
-	/etc/gshadow - contiene la información oculta de las cuentas de grupo.
+	/etc/shadow - contiene las contraseÃ±as encriptadas los usuarios.
+	/etc/gshadow - contiene la informaciÃ³n oculta de las cuentas de grupo.
 
 	
 ------------------------------------------------------------------------------
-CONFIGURACIÓN DE RED
+CONFIGURACIÃ“N DE RED
 ------------------------------------------------------------------------------
 
 Mi ip en la prueba sera : 192.168.10.4
 
-Ojo: El servicio network-manager se encarga de la configuracion cuando se hace desde el entorno grafico, y se pelea con la configuración manual tocando los ficheros /etc/network/interfaces etc.
+Ojo: El servicio network-manager se encarga de la configuracion cuando se hace desde el entorno grafico, y se pelea con la configuraciÃ³n manual tocando los ficheros /etc/network/interfaces etc.
 
 sudo service network-manager stop
 	Para parar el servicio network-manager
@@ -318,7 +319,7 @@ CONFIGURACION DE WIFI
 
 	iwconfig wlan0 mode managed - para configura la tarjeta wifi
 	iwconfig wlan0 essid "Parc Bit"
-	iwconfig wlan0 key <la contraseña>
+	iwconfig wlan0 key <la contraseÃ±a>
 	iwconfig wlan0 commit
 	
 	Luego hay que modificar el fichero de interfaces /etc/network/interfaces poniendo :
@@ -328,7 +329,7 @@ CONFIGURACION DE WIFI
 		wpa-ssid "Parc Bit"
 		wpa-key-mgmt WPA-PSK
 		wpa-group TKIP CCMPb
-		wpa-psk <la contraseña>
+		wpa-psk <la contraseÃ±a>
 
 COMPARTIR RECURSOS CON SAMBA
 
@@ -346,12 +347,12 @@ Comandos:
 	smbpasswd -a nombreusuario
 		Esto crea un usuario especifico para acceder a un recurso.
 
-AÑADIR RECURSOS MANUALMENTE
+AÃ‘ADIR RECURSOS MANUALMENTE
 
 	/etc/samba/smb.conf
-		Para configurar el servidor de Samba y permite añadir mas recursos compartidos 
+		Para configurar el servidor de Samba y permite aÃ±adir mas recursos compartidos 
 
-	Si queremos añadir un recurso insertamos en el fichero smb.conf los valores :
+	Si queremos aÃ±adir un recurso insertamos en el fichero smb.conf los valores :
 
 		[recurso_compartido]
 		host allow = 192.168.10. 
@@ -369,7 +370,7 @@ AÑADIR RECURSOS MANUALMENTE
 			o bien en linux mas modernos
 		sudo service smbd restart
 
-INSTALACIÓN DEL CLIENTE SAMBA Y UTILIDADES
+INSTALACIÃ“N DEL CLIENTE SAMBA Y UTILIDADES
 
 	sudo apt-get install cifs-utils
 	
@@ -399,15 +400,15 @@ COMPARTIR RECURSOS CON NFS
 	/etc/exports
 		En este fichero podemos indicar las carpetas a compartir.
 
-		Añadimos la linea 
+		AÃ±adimos la linea 
 
 	sudo mount -t nfs //192.168.10.4/Compartida 	
 
 CONFIGURACION DE IMPRESORAS
 
-	Configuracion del sistemas - Impresoras - Añadir - Asistente para añadir impresora.
+	Configuracion del sistemas - Impresoras - AÃ±adir - Asistente para aÃ±adir impresora.
 
-	Para que se vea es necesario ir que el equipo que tiene la impresora la publique, esto se hace desde las opciones de configuración  
+	Para que se vea es necesario ir que el equipo que tiene la impresora la publique, esto se hace desde las opciones de configuraciÃ³n  
 
 	Antes de comprar impresora para ver si es compatible se puede ver en: www.openprinting.org
 
@@ -458,13 +459,13 @@ apt-cache search <nombre>
 	busca nombre de paquetes
 
 apt-get remove <nombre paquete>
-	Desinstala una aplicacion, por defecto los ficheros de configuracion se mantienen, es necessario emplear apt-get purge <nombre paquete> para eliminar tambien la configuración.
+	Desinstala una aplicacion, por defecto los ficheros de configuracion se mantienen, es necessario emplear apt-get purge <nombre paquete> para eliminar tambien la configuraciÃ³n.
 
 
 Software aptitude
 Software Centro de Software
 
-Añadir un repositorio , por ejemplo de gimp
+AÃ±adir un repositorio , por ejemplo de gimp
 	add-apt-repository
 
 Instalacion de un paquete .deb
@@ -499,14 +500,14 @@ http://mogaal.com/articulos/kernel-a-la-debian.html
 
 SOFTWARE DMKS
 
-Dynamic Kernel Module Support (DKMS) es un framework usado para generar módulos del núcleo Linux cuyas fuentes no suelen residir en el árbol fuente del núcleo Linux. DKMS habilita controladores de núcleo para ser automáticamente reconstruidos cuando un nuevo núcleo es instalado lo que hace posible usar un nuevo núcleo inmediatamente, en lugar de esperar que módulos compatibles de terceras partes para ser liberado.
+Dynamic Kernel Module Support (DKMS) es un framework usado para generar mÃ³dulos del nÃºcleo Linux cuyas fuentes no suelen residir en el Ã¡rbol fuente del nÃºcleo Linux. DKMS habilita controladores de nÃºcleo para ser automÃ¡ticamente reconstruidos cuando un nuevo nÃºcleo es instalado lo que hace posible usar un nuevo nÃºcleo inmediatamente, en lugar de esperar que mÃ³dulos compatibles de terceras partes para ser liberado.
 
 lsmod
 	permite ver los modulos cargados.
 
 https://es.wikipedia.org/wiki/Dynamic_Kernel_Module_Support
 
-permite añadir 
+permite aÃ±adir 
 
 KERNEL Y LOS MODULOS CARGADOS
 
@@ -727,25 +728,25 @@ se puede instalar mediante paquetes y ejecutar simplemente llamandolo.
 /etc/shells
 	Muestra los interpretes de comandos instalados
 
-¿Como cambiar el interprete de comandos que emplea un usuario?
+Â¿Como cambiar el interprete de comandos que emplea un usuario?
 
 Editando el fichero /etc/passwd, y cambiado al final de la linea del usuario el interprete.	
 
 VARIABLES DEL SISTEMA
 
-¿Como mostrar el contenido de una variables?
+Â¿Como mostrar el contenido de una variables?
 	echo $PATH 
 		muestra la variable PATH
 
 	Obs.: Dicha variable indica donde buscar los comandos.	
 
-	Añadir la ruta a la variable PATH
+	AÃ±adir la ruta a la variable PATH
 
 	$export PATH=$PATH:/home/angel/ejecutables
 
-El fichero /etc/bash.bashrc se añade a todos los usuarios.
+El fichero /etc/bash.bashrc se aÃ±ade a todos los usuarios.
 
-¿como mostrar todas las variables de entorno?
+Â¿como mostrar todas las variables de entorno?
 	$env
 		Muestra las variables de entorno.
 
@@ -790,7 +791,7 @@ INSTALAR UN SERVIDOR DE DNS
 		nameserver 127.0.0.1
 		
 	sudo pico /etc/bind/named.conf.local
-		Hay que añadirle la zona que a mi me interesa, esto es
+		Hay que aÃ±adirle la zona que a mi me interesa, esto es
 		zone "practica.cursolinux.net" {
 			type master;
 			file "etc/bind/db.cursolinux" 
@@ -800,7 +801,7 @@ INSTALAR UN SERVIDOR DE DNS
 
 	sudo pico /etc/bind/db.cursolinux
 
-		añadir ns    IN    A    192.168.1.200 <- Esto es la IP fija que disponemos.
+		aÃ±adir ns    IN    A    192.168.1.200 <- Esto es la IP fija que disponemos.
 
 	reiniciar el servicio bind9 con el comando sudo /etc/init.d/bind9 restard
 
@@ -863,7 +864,7 @@ netcat
 	permite escuchar la red. Sniffer, parecido al wireshark.			
 
 john de ripper
-	permite ver la seguridad de las contraseñas de nuestra maquina atacando el fichero password de etc.
+	permite ver la seguridad de las contraseÃ±as de nuestra maquina atacando el fichero password de etc.
 
 Cambiar los puertos por defecto de los servidores que tengo instalados.	
 
