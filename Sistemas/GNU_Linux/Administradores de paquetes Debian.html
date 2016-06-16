@@ -5,19 +5,20 @@
 </head>
 <body>
 
-<h1>Herramientas de administraciÛn de paquetes</h1>
+
+<h1>Herramientas de administraci√≥n de paquetes</h1>
 
 	<h2>apt - Advanced Packaging Tool</h2>
 
 		<h3>apt-get</h3>
 
 		<h3>apt-cache</h3>
-			<h4>DescripciÛn</h4>
+			<h4>Descripci√≥n</h4>
 				<ul>
-					<li>Ofrece informaciÛn sobre la base de datos de paquetes Debian, tambien llamada cachÈ de paquetes.</li>
-					<li>Realiza una serie de operaciones sobre la cachÈ (registro o lista) de paquetes de APT.</li>
-					<li>apt-cache no modifica el estado del sistema pero proporciona operaciones de b˙squeda y genera informaciÛn interesante a partir de los metadatos del paquete.</li>
-					<li>InformaciÛn resumida del comando en <b><i>apt-cache -h</i></b> y detallada en <b><i>man apt-cache</i></b></li>
+					<li>Ofrece informaci√≥n sobre la base de datos de paquetes Debian, tambien llamada cach√© de paquetes.</li>
+					<li>Realiza una serie de operaciones sobre la cach√© (registro o lista) de paquetes de APT.</li>
+					<li>apt-cache no modifica el estado del sistema pero proporciona operaciones de b√∫squeda y genera informaci√≥n interesante a partir de los metadatos del paquete.</li>
+					<li>Informaci√≥n resumida del comando en <b><i>apt-cache -h</i></b> y detallada en <b><i>man apt-cache</i></b></li>
 				</ul>
 			<h4>Comandos:</h4>	
 				<ul>
@@ -28,7 +29,7 @@
 				  </li>
 				  <li>apt-cache showpkg <i>paquete</i> 
 					<ul>
-						<li>Muestra la informaciÛn del paquete</li>
+						<li>Muestra la informaci√≥n del paquete</li>
 					</ul>
 				  </li>
 				  <li>apt-cache showsrc <i>paquete</i> 
@@ -58,7 +59,7 @@
 				  </li>
 				  <li>apt-cache search
 					<ul>
-						<li>Permite buscar dentro del listado de paquetes disponibles en nuestros repositorios. Hace la busqueda en en nombre del paquete, en su descripciÛn y en toda la informaciÛn disponible del paquete</li>
+						<li>Permite buscar dentro del listado de paquetes disponibles en nuestros repositorios. Hace la busqueda en en nombre del paquete, en su descripci√≥n y en toda la informaci√≥n disponible del paquete</li>
 					</ul>
 				  </li>
 				  <li>apt-cache show <i>paquete</i>
@@ -79,22 +80,22 @@
 								</li>
 								<li>Sugiere (Suggest)
 									<ul>
-										<li>Denota paquetes que pueden ser ˙tiles con tu paquete destino pero no necesariamente requeridos. Por ejemplo "Python doc" no se requiere para el funcionamiento de Python en tu equipo, pero puede ser util para tÌ.</li>
+										<li>Denota paquetes que pueden ser √∫tiles con tu paquete destino pero no necesariamente requeridos. Por ejemplo "Python doc" no se requiere para el funcionamiento de Python en tu equipo, pero puede ser util para t√≠.</li>
 									</ul>
 								</li>	
 								<li>Rompe (Breaks)
 									<ul>
-										<li>Denota paquetes que ya est·n instalados en tu sistema pero rompen el proceso de tu instalaciÛn ya que dpkg rechazar· desempaquetar e instalar los paquetes destino a no ser que los paquetes rotos sean reconfigurados primero. Esto normalmente en caso de una cierta versiÛn. La soluciÛn autom·tica seria hacer un upgrade (deconfigure) de todos los paquetes rotos.</li>
+										<li>Denota paquetes que ya est√°n instalados en tu sistema pero rompen el proceso de tu instalaci√≥n ya que dpkg rechazar√° desempaquetar e instalar los paquetes destino a no ser que los paquetes rotos sean reconfigurados primero. Esto normalmente en caso de una cierta versi√≥n. La soluci√≥n autom√°tica seria hacer un upgrade (deconfigure) de todos los paquetes rotos.</li>
 									</ul>
 								</li>	
 								<li>Entra en conflicto (Conflicts)
 									<ul>
-										<li>Denota paquetes que ya est·n instalados en el equipo y declaran una incompatibilidad absoluta, estos paquetes <b>deben ser desinstalados</b> antes de instalar el paquete destino.</li>
+										<li>Denota paquetes que ya est√°n instalados en el equipo y declaran una incompatibilidad absoluta, estos paquetes <b>deben ser desinstalados</b> antes de instalar el paquete destino.</li>
 									</ul>
 								</li>	
 								<li>Reemplaza (Replace)
 									<ul>
-										<li>Denota paquetes que ya est·n instalados en el equipo y que alguno de sus ficheros ser· reemplazado por el paquete destino a instalar.</li>
+										<li>Denota paquetes que ya est√°n instalados en el equipo y que alguno de sus ficheros ser√° reemplazado por el paquete destino a instalar.</li>
 									</ul>
 								</li>
 								<li>Depends: update-inetd | Depends: openbsd-inetd
@@ -106,7 +107,7 @@
 						</li>
 						<li>Observaciones:
 							<ul>
-								<li>Podemos obtener una visiÛn de las dependencias entre los paquetes tambien desde <a href="http://packages.ubuntu.com">Ubuntu Packages Search</a></li> donde nos marca de color rojo las dependencias, verde las recomendaciones, azul las sugerencias.
+								<li>Podemos obtener una visi√≥n de las dependencias entre los paquetes tambien desde <a href="http://packages.ubuntu.com">Ubuntu Packages Search</a></li> donde nos marca de color rojo las dependencias, verde las recomendaciones, azul las sugerencias.
 							</ul>
 						</li>	
 					</ul>
@@ -144,12 +145,12 @@
 				  </li>
 				  <li>apt-cache {-v | --version}
 					<ul>
-						<li>InformaciÛn de la versiÛn del comando apt-cache.</li>
+						<li>Informaci√≥n de la versi√≥n del comando apt-cache.</li>
 					</ul>
 				  </li>
 				  <li>apt-cache {-h | --help}
 					<ul>
-						<li>InformaciÛn de la sintaxis y opciones del comando de forma resumida, muy interesante para echar un vistazo rapido a todas sus opciones.</li>
+						<li>Informaci√≥n de la sintaxis y opciones del comando de forma resumida, muy interesante para echar un vistazo rapido a todas sus opciones.</li>
 					</ul>
 				  </li>
 				</ul>
@@ -158,20 +159,20 @@
 
 		<h3>dpkg</h3>
 
-			<h4>DescripciÛn</h4>
+			<h4>Descripci√≥n</h4>
 				<ul>
 					<li></li>
 				</ul>
 			<h4>Comandos:</h4>
 				<ul>
-					<li>dpkg --list Û dpkg -l
+					<li>dpkg --list √≥ dpkg -l
 						<ul>
 							<li>Listado de los paquetes instalados en el sistema.</li>
 						</ul>
 					</li>		
 					<li>dpkg --listfiles <i>paquete</i>
 						<ul>
-							<li>InformaciÛn sobre un paquete instalado incluyendo sus ficheros.</li>
+							<li>Informaci√≥n sobre un paquete instalado incluyendo sus ficheros.</li>
 						</ul>
 					</li>	
 					<li>dpkg --search <i>fichero</i>
@@ -183,7 +184,7 @@
 
 		<h3>dpkg-query</h3>
 
-			<h4>DescripciÛn</h4>
+			<h4>Descripci√≥n</h4>
 				<ul>
 					<li></li>
 				</ul>
@@ -205,9 +206,9 @@
 								</ul>
 							</li>
 							<li>Emplearemos por tanto <b><i>dpkg-query -l | grep "^.i"</i></b> para seleccionar los paquetes instalados.</li>							
-							<li>Tambien mostrar· aquellos paquetes que aun conservan sus ficheros de configuraciÛn. Aquellos que no han sido purgados mediante <i>apt-get purge paquete</i></li>
+							<li>Tambien mostrar√° aquellos paquetes que aun conservan sus ficheros de configuraci√≥n. Aquellos que no han sido purgados mediante <i>apt-get purge paquete</i></li>
 							<li>El comando <i>dpkg -l</i> es equivalente a <i>dpkg-query -l</i>
-							<li>Hay que notar que el comando <i>apt-cache pkgnames</i> no lista los paquetes instalados sin que lo que hace es listar los paquetes disponibles para ser instalados independientemente de que estos estÈn instalados o no.</li>
+							<li>Hay que notar que el comando <i>apt-cache pkgnames</i> no lista los paquetes instalados sin que lo que hace es listar los paquetes disponibles para ser instalados independientemente de que estos est√©n instalados o no.</li>
 
 						</ul>
 					</li>
@@ -215,7 +216,7 @@
 
 		<h3>dpkg-reconfigure</h3>
 
-			<h4>DescripciÛn</h4>
+			<h4>Descripci√≥n</h4>
 				<ul>
 					<li></li>
 				</ul>
@@ -232,17 +233,17 @@
 	<h2>aptitude</h2>
 	<h2>Synaptic</h2>
 
-<h1>ActualizaciÛn del sistema e InstalaciÛn por paquetes</h1>
+<h1>Actualizaci√≥n del sistema e Instalaci√≥n por paquetes</h1>
 
-	<h2>ActualizaciÛn de Ubuntu 14.04 - Modo gr·fico</h2>
+	<h2>Actualizaci√≥n de Ubuntu 14.04 - Modo gr√°fico</h2>
 	<ol>
-		<li>ConfiguraciÛn del sistema</li>
+		<li>Configuraci√≥n del sistema</li>
 		<li>Detalles</li>
-		<li>BotÛn "Instalar actualizaciones"</li>
-		<li>BotÛn "Instalar ahora"</li>
+		<li>Bot√≥n "Instalar actualizaciones"</li>
+		<li>Bot√≥n "Instalar ahora"</li>
 	</ol>
 
-	<h2>ActualizaciÛn de Ubuntu 14.04 - Modo Comandos</h2>
+	<h2>Actualizaci√≥n de Ubuntu 14.04 - Modo Comandos</h2>
 	<ol>
 		<li>sudo apt-get update</li>
 		<li>sudo apt-get upgrade</li>
@@ -254,7 +255,7 @@
 <!--
  Instalaciones con APT (Advanced Packaging Tool)
 apt-get 
-DescripciÛn: 
+Descripci√≥n: 
 
 Opciones :
 
@@ -265,20 +266,20 @@ apt-get remove <paquete>
 Desinstalar paquete
 
 apt-get purge <paquete>
-Elimina un paquete incluidos sus ficheros de configuraciÛn
+Elimina un paquete incluidos sus ficheros de configuraci√≥n
 
 apt-get autoremove
-Elimina de forma autom·tica aquellos paquetes que no se est·n usando.
+Elimina de forma autom√°tica aquellos paquetes que no se est√°n usando.
 
 apt-get update <paquete>
-Actualiza un paquete a la ˙ltima versiÛn disponible en el repositorio.
+Actualiza un paquete a la √∫ltima versi√≥n disponible en el repositorio.
 
 apt-get upgrade
 Actualiza el sistema
-Actualizar· todos los paquetes que dispongan de la rama instalada de la distribuciÛn.
+Actualizar√° todos los paquetes que dispongan de la rama instalada de la distribuci√≥n.
 
 apt-get dist-upgrade
-Actualiza la distribuciÛn completa. Actualiza nuestro sistema a la siguiente versiÛn disponible de la distribuciÛn.
+Actualiza la distribuci√≥n completa. Actualiza nuestro sistema a la siguiente versi√≥n disponible de la distribuci√≥n.
 
 apt-get source <paquete>
 Descarga unicamente las fuentes de un paquete para manipularlas de forma manual.
@@ -290,18 +291,18 @@ Limpiar caches, paquetes descargados, etc
 apt-get check
 Verificar que no tenemos ninguna dependencia incumplida.
 apt-cache 
-DescripciÛn: permite (lanzar consultas, buscar paquetes)
+Descripci√≥n: permite (lanzar consultas, buscar paquetes)
 
 Opciones:
 
 apt-cache search <paquete>
-Busca un paquete en los repositorios, se puede especificar un patrÛn, expresiÛn regular, nombre exacto del paquete, etc ,...
+Busca un paquete en los repositorios, se puede especificar un patr√≥n, expresi√≥n regular, nombre exacto del paquete, etc ,...
 
 apt-cache showpkg <paquete>
-Mostrar informaciÛn sobre un paquete.
+Mostrar informaci√≥n sobre un paquete.
 
 apt-cache show <paquete>
-Mostrar informaciÛn ampliada del paquete.
+Mostrar informaci√≥n ampliada del paquete.
 
 apt-cache depends <paquete>
 Mostrar dependencias del paquete.
@@ -311,7 +312,7 @@ Nombre de todos los paquetes instalados en el sistema.
 
 add-apt-repository
 
-DescripciÛn: Permite (aÒadir repositorios)
+Descripci√≥n: Permite (a√±adir repositorios)
 
 Ejemplo : sudo add-apt-repository "deb http://repository.spotify.com stable non-free"
 
