@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Apuntes de W3C</title>
+</head>
+<body>
+
+	<header>
+		<h1>Apuntes del curso: "W3Cx: HTML5.0x HTML5 Introduction"</h1>
+	</header>
+
+	<article>
+		<h1>Enlaces interesantes del curso</h1>
+		<ul>
+			<li>W3Cx: HTML5.0x HTML5 Introduction : <a href="https://courses.edx.org/courses/course-v1:W3Cx+HTML5.0x+1T2016/info" target="_blank">https://courses.edx.org/courses/course-v1:W3Cx+HTML5.0x+1T2016/info</a></li>
+			<li>W3C HTML5 : <a href="https://www.w3.org/TR/html5/" target="_blank">https://www.w3.org/TR/html5/</a>
+			<li>Mozilla Developer Network - HTML attribute reference: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes" target="_blank">https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes</a></li>
+			<li>Mozilla Developer Network - Guía de referencia de Elementos HTML: <a href="https://developer.mozilla.org/es/docs/Web/HTML/Elemento" target="_blank">https://developer.mozilla.org/es/docs/Web/HTML/Elemento</a></li>
+			<li>JS Bin: <a href="http://jsbin.com/" target="blank">jsbin.com</a>(<a href="http://code.tutsplus.com/tutorials/javascript-tools-of-the-trade-jsbin--net-36843" target="_blank">Tutorial de JS Bin</a>)</li>
+			<li>CodePen: <a href="http://codepen.io/" target="_blank">codepen.io</a>(<a href="https://css-tricks.com/video-screencasts/112-using-codepen/" target="_blank">Tutorial de CodePen</a>)</li>
+		</ul>
+	</article>
+
+	<article>
+		<h1>Como poner el símbolo &lt;, &gt;, &amp;, &quot;,... en el código html</h1>
+		<p>Empleando los códigos siguientes: </p>
+		<table>
+			<tr>
+				<td>&lt;</td>
+				<td>&amp;lt;</td>
+			</tr>
+			<tr>
+				<td>&gt;</td>
+				<td>&amp;gt;</td>
+			</tr>
+			<tr>
+				<td>&amp;</td>
+				<td>&amp;amp;</td>
+			</tr>
+			<tr>
+				<td>&quot;</td>
+				<td>&amp;quot;</td>
+			</tr>
+			<tr>
+				<td>&aacute;</td>
+				<td>&amp;aacute;</td>
+			</tr>
+			<tr>
+				<td>&eacute;</td>
+				<td>&amp;eacute;</td>
+			</tr>
+			<tr>
+				<td>&iacute;</td>
+				<td>&amp;iacute;</td>
+			</tr>
+			<tr>
+				<td>&oacute;</td>
+				<td>&amp;oacute;</td>
+			</tr>
+			<tr>
+				<td>&uacute;</td>
+				<td>&amp;uacute;</td>
+			</tr>
+			<tr>
+				<td>&Aacute;</td>
+				<td>&amp;Aacute;</td>
+			</tr>
+			<tr>
+				<td>&Eacute;</td>
+				<td>&amp;Eacute;</td>
+			</tr>
+			<tr>
+				<td>&Iacute;</td>
+				<td>&amp;Iacute;</td>
+			</tr>
+			<tr>
+				<td>&Oacute;</td>
+				<td>&amp;Oacute;</td>
+			</tr>
+			<tr>
+				<td>&Uacute;</td>
+				<td>&amp;Uacute;</td>
+			</tr>
+			<tr>
+				<td>&uuml;</td>
+				<td>&amp;uuml;</td>
+			</tr>
+			<tr>
+				<td>&Uuml;</td>
+				<td>&amp;Uuml;</td>
+			</tr>
+			<tr>
+				<td>&ntilde;</td>
+				<td>&amp;ntilde;</td>
+			</tr>
+			<tr>
+				<td>&Ntilde;</td>
+				<td>&amp;Ntilde;</td>
+			</tr>
+			<tr>
+				<td>&iquest;</td>
+				<td>&amp;iquest;</td>
+			</tr>
+			<tr>
+				<td>&iexcl;</td>
+				<td>&amp;iexcl;</td>
+			</tr>
+		</table>
+	</article>
+	
+	<article>
+		<h1>Elementos semánticos</h1>
+		<section>
+			<h1>Separando contenido y estilo</h1>
+			<p>Cuando escribimos en lenguaje HTML, es importante separar contenido y estilo. El estido deberia estar bien guardado en hojas de estilo en cascada (<abbr title="Cascade Style Sheet">CSS</abbr>)
+		</section>
+		<section>
+			<h1>Comparativa entre &lt;b&gt; y &lt;strong&gt;</h1>
+			<p><strong>Bold</strong> es un estilo que hace las letras más tupidas por lo que destaca entre otro texto pero no tiene un significado semántico</p>
+			<p><strong>Strong</strong> es una indicación de como algo debería ser. Representa importancia, seriedad o urgencia del contenido.</p>
+		</section>
+		<section>
+			<h1>Compartiva entre &lt;i&gt; y &lt;em&gt;</h1>
+			<p><strong>Italics</strong> es un estilo que inclina el texto. </p>
+			<p><strong>Emphasis</strong> es una indicación para emfatizar el contenido.</p>			
+			<p>Observación: Se le ha querido dar un nuevo uso a &lt;i&gt; en HTML5 que consiste en usarlo para expresar una voz o modo diferente, por ejemplo insertar frases en otros idiomas, para ello empleamos (&lt;i lang="fr"&gt;À la carte&lt;i&gt;)</p>
+		</section>
+		<section>
+			<h1>Estructura de página web</h1>
+			<ul>
+				<li>header: El header puede ser el punto de partida para todo el documento o secciones individuales. Contiene normalmente la introducción</li>
+				<li>nav: Se refiere a la navegación. Puede contener un conjunto de links de navegación, como una tabla de contenidos de un libro.</li>
+				<li>section: Secciones del documento. Por ejemplo, un documento acerca de plantas podría tener varias secciones bajo encabezamientos como "perennes", "caducas", etc.</li>
+				<li>article: Se refiere a contenido independiente. Si un articulo se extrae del documento, este no pierde el sentido.</li>
+				<li>aside: Se refiere a contenido al margen del contenido principal. Por ejemplo, en un articulo acerca de arquitectura de la region de Barcelona, se podria crear un aside informando sobre la región de Barcelona.</li>
+				<li>footer: autor, copyrights, información de contacto</li>
+			</ul>
+		</section>
+		<section>
+			<h1>Otros elementos semánticos</h1>
+			<ul>
+				<li>details: Una forma de proporcionar información adicional que el usuario puede mostrar o ocultar.</li>
+				<li>figcaption: Usado para proporcionar una explicación de una imagen. Se emplea junto con la etiqueta &lt;figure&gt;</li>
+				<li></li>
+			</ul>
+		</section>
+	</article>
+	<article>
+		<h1>HTML5 un conjunto de tecnologias</h1>
+		<ul>
+			<li>Especificación de HTML5</li>
+			<li>CSS3</li>
+			<li>SVG</li>
+			<li>MathML</li>
+			<li>Geolocation</li>
+			<li>XmlHttpRequest</li> 
+			<li>Context 2D</li>
+			<li>Web Fonts(WOFF)</li>
+			<li>...</li>
+		</ul>
+		<p>Los limites de este conjunto de tecnologias es informal y cambia con el tiempo</p>	
+	</article>	
+	<article>
+		<h1>Abreviaturas</h1>
+		<ul>
+			<li><abbr title="Cascade Style Sheet">CSS</abbr></li>
+		</ul>
+	</article>	
+	<footer>
+		<hr><a href="../index.html">Ir al inicio</a>
+	</footer>
+	
+</body>
+</html>
