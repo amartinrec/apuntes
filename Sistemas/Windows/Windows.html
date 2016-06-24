@@ -8,12 +8,17 @@
 	<article>
 		<h1>Mapear unidades</h1>
 		<ul>
-			<li>En el siguiente enlace <a href="http://superuser.com/questions/644684/mapping-drive-letters-to-local-folders">http://superuser.com/questions/644684/mapping-drive-letters-to-local-folders</a> se indica una forma de hacerlo emplenado una linea en el registro de windows.</li>
-			<li>Comandos:
+			<li>Insertando linea en el registro de windows:
+				<ol>
+					<li>Ir a HKEY_LOCAL_MACHINE \ SYSTEM \ CurrentControlSet \ Control \ Session Manager \ DOS Devices</li>
+					<li>Insertar nuevo valor REG_SZ y llamarlo X: (donde X es la letra de la unidad) con un valor que deberia se el path con formato "\DosDevices\C:\Directorio\Ejemplo"</li>
+				</ol>
+				Mas información en el articulo: <a href="http://superuser.com/questions/644684/mapping-drive-letters-to-local-folders">Mapping drive letters to local folders</a></li>
+			<li>Con los siguientes comandos:
 				<ul>
-					<li><code>mklink</code></li>
-					<li><code>net user</code></li>
-					<li><code>subst</code></li>
+					<li>Comando: <a href="https://technet.microsoft.com/es-es/library/cc753194(v=ws.10).aspx">mklink</a></li>
+					<li>Comando: <a href="https://technet.microsoft.com/es-es/library/gg651155(v=ws.10).aspx">net use</a></li>
+					<li>Comando: <a href="https://technet.microsoft.com/en-us/library/bb491006.aspx">subst</a></li>
 				</ul>
 			</li>
 		</ul>			
