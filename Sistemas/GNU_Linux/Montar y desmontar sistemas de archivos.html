@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Montar y desmontar sistemas de archivos</title>
+</head>
+<body>
+	<article>
+		<h1>Montar un sistema de archivos</h1>
+		<ul>
+			<li>Montar un sistema de archivos (file system) es asociarlo a un directorio</li>
+		</ul>
+	</article>
+
+	<article>
+		<h1>Montar temporalmente</h1>
+		<ul>
+			<li>Se puede hacer temporalmente empleando el comando <code>mount</code>y desmontandolo después con el comando <code>umount</code></li>
+		</ul>
+	</article>
+
+	<article>
+		<h1>Montar definitivamente</h1>
+		<ul>
+			<li>Se puede hacer definitivamente modificando el archivo <code>/etc/fstab</code> que es una abreviatura de filesystem table o tabla del sistema de archivos.</li>
+			<li>El archivo <code>/etc/fstab</code> consta de una serie de lineas de 6 campos separados por uno o mas espacios o tabuladores.</li>
+			<li>Las lineas que empiezan con (#) son comentarios y se ignorarán.</li>
+			<li>Significado de los campos:
+				<ul>
+					<li>Dispositivo
+						<ul>
+							<li>Primera columna</li>
+							<li>Suelen ser nombres de archivo de dispositivo que hacen referencia a discos duros, disquetes, etc</li>
+							<li></li>
+						</ul>
+					</li>	
+				</ul>
+			</li>
+		</ul>
+	</article>
+
+	<article>
+		<h1>UUID</h1>
+		<ul>
+			<li>Para saber el UUID de los sistemas de archivos emplear el comando <code>sudo blkid</code></li>
+		</ul>
+	</article>
+</body>
+</html>
